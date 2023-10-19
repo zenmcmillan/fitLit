@@ -14,7 +14,7 @@ import './images/turing-logo.png';
 //console.log("User Data:", users);
 
 // Example of one way to import functions from the domUpdates file.  You will delete these examples.
-import { exampleFunction1, exampleFunction2, showUserInfo, showAverages,showWaterWeek, showUserSleepInfo } from './domUpdates';
+import { exampleFunction1, exampleFunction2, showUserInfo, showAverages,showWaterWeek, showUserSleepInfo, showUserSleepInfo2 } from './domUpdates';
 import { averageStepGoals } from '../test/users-functions';
 import { give7DayWaterConsumption, giveAverageWaterConsumption, fluidOuncesForDay, giveWaterConsumptionforSpecificDay } from '../test/hydration-functions';
 import { fetchUserData, fetchHydrationData, fetchSleepData, fetchActivityData} from './apiCalls';
@@ -74,9 +74,10 @@ const renderUserInfo = (data) => {
 }
 
 const renderSleepInfo = (data) => {
-  let averageSleep = averageHoursSleptPerDay(data, index) 
-  
-  showUserSleepInfo(averageSleep)
+  let average = averageHoursSleptPerDay(data, index) 
+  showUserSleepInfo(average)
+  let sleepQuality = averageSleepQuality(data, index)
+  showUserSleepInfo2(sleepQuality)
 }
 
 const grabWaterWeek = (data) =>{

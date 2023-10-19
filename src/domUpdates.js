@@ -22,9 +22,14 @@ const sleepContentSection = document.querySelector('#sleep-content')
 
 const showUserSleepInfo = (data) => {
 
-  sleepContentSection.innerHTML = '';
+  
 
-  sleepContentSection.innerHTML += `<p>${data}</p>`
+  sleepContentSection.innerHTML += `<p>Average Hours Slept - ${data}</p>`
+}
+
+const showUserSleepInfo2 = (data) => {
+
+  sleepContentSection.innerHTML += `<p>Average Sleep Quality - ${data}</p>`
 }
 
 const showWaterWeek = (waterWeek) =>{
@@ -78,6 +83,7 @@ export {
   showUserAverageSteps,
   showWaterWeek,
   showUserSleepInfo,
+  showUserSleepInfo2,
   exampleFunction1,
   exampleFunction2,
-}
+};

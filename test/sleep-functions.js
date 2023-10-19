@@ -8,7 +8,7 @@ export const averageHoursSleptPerDay = (array, id) => {
     total += dailyHours;
   });
 
-  return (total / hours.length).toFixed()
+  return (total / hours.length).toFixed(1)
 };
 
 export const averageSleepQuality = (array, id) => {
@@ -21,7 +21,7 @@ export const averageSleepQuality = (array, id) => {
     total += dailyHours;
   });
 
-  return total / hours.length;
+  return (total / hours.length).toFixed(1);
 };
 
 

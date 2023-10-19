@@ -310,7 +310,7 @@ describe("Average Hours Slept for a User", () => {
 
     const averageHoursSlept = averageHoursSleptPerDay(sleepData, 19)
      
-    expect(averageHoursSlept).to.equal(9.9);
+    expect(averageHoursSlept).to.equal('9.9');
     
   });
 });
@@ -622,6 +622,6 @@ describe("Average Sleep Quality", () => {
 
     const averageSleepQuality1 = averageSleepQuality(sleepData, 19);
 
-    expect(averageSleepQuality1).to.equal(4.7);
+    expect(averageSleepQuality1).to.equal('4.7');
   });
 });

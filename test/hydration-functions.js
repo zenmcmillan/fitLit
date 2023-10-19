@@ -1,23 +1,3 @@
-// function averageFluidOuncesPerDay(hydratedUsers) {
-//     const userTotals = {}; 
-//     const userCounts = {}; 
-  
-//     hydratedUsers.forEach(hUser => {
-//       const userId = hUser.userID;
-//       const ounces = hUser.numOunces;
-  
-//       userTotals[userId] = userTotals[userId] + ounces;
-//       userCounts[userId] = userCounts[userId] + 1;
-//     });
-  
-//     const averages = {};
-//     Object.keys(userTotals).forEach(userId => {
-//       averages[userId] = userTotals[userId] / userCounts[userId];
-//     });
-  
-//     return averages;
-//   }
-
 const giveAverageWaterConsumption = (array, id) => {
   let total = 0;
   const filtered = array.filter((person) => person.userID === id);

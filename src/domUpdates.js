@@ -20,8 +20,11 @@ const averageSteps = document.querySelector("#user-average-steps")
 const allUserAverageSteps = document.querySelector("#all-users-average-steps")
 
 const hydrationContent = document.querySelector("#hydration-content")
+const sleepContent = document.querySelector("#sleep-content")
 
-
+const showSleepWeek = (sleepWeek) =>{
+  sleepContent.innerHTML += `<p>Your sleep was crazy this week! Here is how!${sleepWeek}.</p>`
+}
 
 const showWaterWeek = (waterWeek) =>{
   hydrationContent.innerHTML = ""
@@ -73,6 +76,7 @@ export {
   showAverages,
   showUserAverageSteps,
   showWaterWeek,
+  showSleepWeek,
   exampleFunction1,
   exampleFunction2,
 }

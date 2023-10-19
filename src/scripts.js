@@ -14,11 +14,11 @@ import './images/turing-logo.png';
 //console.log("User Data:", users);
 
 // Example of one way to import functions from the domUpdates file.  You will delete these examples.
-import { exampleFunction1, exampleFunction2, showUserInfo, showAverages,showWaterWeek } from './domUpdates';
+import { exampleFunction1, exampleFunction2, showUserInfo, showAverages,showWaterWeek, showSleepWeek } from './domUpdates';
 import { averageStepGoals } from '../test/users-functions';
 import { give7DayWaterConsumption, giveAverageWaterConsumption, fluidOuncesForDay, giveWaterConsumptionforSpecificDay } from '../test/hydration-functions';
 import { fetchUserData, fetchHydrationData, fetchSleepData, fetchActivityData} from './apiCalls';
-
+import { give7DaySleepHours, give7DaySleepQuality } from '../sleepFunctions';
 
 exampleFunction1('Travis');
 exampleFunction2('Travis')
@@ -33,7 +33,7 @@ const populateDOM2 = (data) => {
 };
 
 const populateDOM3 = (data) => {
-
+    showSleepWeek(data)
 };
 
 const populateDOM4 = (data) => {
@@ -82,7 +82,11 @@ const allAverages = (data) =>{
     showAverages(averages)
   }
 
-
+const grabSleepWeek = (data) =>{
+    let sleepWeekHours = give7DaySleepHours(data,index, "2023,06,25")
+    let sleepWeekQuality = give7DaySleepQuality(data,index, "2023,06,25")
+    showSleepWeek(sleepWeekHours+sleepWeekQuality)
+}
 
 
 

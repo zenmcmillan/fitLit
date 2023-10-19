@@ -14,11 +14,11 @@ import './images/turing-logo.png';
 //console.log("User Data:", users);
 
 // Example of one way to import functions from the domUpdates file.  You will delete these examples.
-import { exampleFunction1, exampleFunction2, showUserInfo, showAverages,showWaterWeek } from './domUpdates';
+import { exampleFunction1, exampleFunction2, showUserInfo, showAverages,showWaterWeek, showUserSleepInfo, showUserSleepInfo2 } from './domUpdates';
 import { averageStepGoals } from '../test/users-functions';
 import { give7DayWaterConsumption, giveAverageWaterConsumption, fluidOuncesForDay, giveWaterConsumptionforSpecificDay } from '../test/hydration-functions';
 import { fetchUserData, fetchHydrationData, fetchSleepData, fetchActivityData} from './apiCalls';
-
+import { averageHoursSleptPerDay, averageSleepQuality } from '../test/sleep-functions';
 
 exampleFunction1('Travis');
 exampleFunction2('Travis')
@@ -33,11 +33,11 @@ const populateDOM2 = (data) => {
 };
 
 const populateDOM3 = (data) => {
-
+  renderSleepInfo(data)
 };
 
 const populateDOM4 = (data) => {
-
+  
 };
 
 window.addEventListener('load', () => {
@@ -61,6 +61,8 @@ let index
 
 // 2023/06/25 - 2023/07/01
 
+
+
 const getRandomIndex = (array) => {
     return Math.floor(Math.random() * array.length);
 };
@@ -69,6 +71,13 @@ const renderUserInfo = (data) => {
      index = getRandomIndex(data)
     showUserInfo(index, data)
     
+}
+
+const renderSleepInfo = (data) => {
+  let average = averageHoursSleptPerDay(data, index) 
+  showUserSleepInfo(average)
+  let sleepQuality = averageSleepQuality(data, index)
+  showUserSleepInfo2(sleepQuality)
 }
 
 const grabWaterWeek = (data) =>{

@@ -1,4 +1,4 @@
-"sleepData": [
+const sleepData = [
     {
     "userID": 1,
     "date": "2023/03/24",
@@ -29999,4 +29999,4 @@
     "hoursSlept": 5.3,
     "sleepQuality": 2.8
     }
-    
+  ]

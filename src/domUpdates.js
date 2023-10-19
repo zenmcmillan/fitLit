@@ -15,25 +15,34 @@ const exampleFunction2 = (person) => {
 
 const profileSection = document.querySelector('#user-expandable-content');
 const welcome = document.querySelector('.welcome-sign');
-
 const averageSteps = document.querySelector("#user-average-steps")
 const allUserAverageSteps = document.querySelector("#all-users-average-steps")
-
 const hydrationContent = document.querySelector("#hydration-content")
+const sleepContentSection = document.querySelector('#sleep-content')
 
+const showUserSleepInfo = (data) => {
 
+  
+
+  sleepContentSection.innerHTML += `<p>Average Hours Slept - ${data}</p>`
+}
+
+const showUserSleepInfo2 = (data) => {
+
+  sleepContentSection.innerHTML += `<p>Average Sleep Quality - ${data}</p>`
+}
 
 const showWaterWeek = (waterWeek) =>{
   hydrationContent.innerHTML = ""
   hydrationContent.innerHTML += `<p>You drank ${waterWeek}over the course of the week</p>`
 }
 
-const  showAverages = (averages) =>{
+const showAverages = (averages) => {
   allUserAverageSteps.innerHTML = ""
   allUserAverageSteps.innerHTML += `<p>${averages}</p>`
 }
 
-const showUserAverageSteps = () =>{
+const showUserAverageSteps = () => {
   averageSteps.innerHTML +=`<p>${user.dailyStepGoal}</p>`
 }
 
@@ -73,6 +82,8 @@ export {
   showAverages,
   showUserAverageSteps,
   showWaterWeek,
+  showUserSleepInfo,
+  showUserSleepInfo2,
   exampleFunction1,
   exampleFunction2,
-}
+};

@@ -1,6 +1,6 @@
 import { expect } from "chai";
 
-const { averageHoursSleptPerDay } = require('./sleep-functions.js')
+const { averageHoursSleptPerDay, averageSleepQuality} = require('./sleep-functions.js')
 
 describe("Average Hours Slept for a User", () => {
   it("should give the average daily hours slept of a particular user", () => {
@@ -620,8 +620,8 @@ describe("Average Sleep Quality", () => {
       },
     ];
 
-    const averageSleepQuality = averageHoursSleptPerDay(sleepData, 19);
+    const averageSleepQuality1 = averageSleepQuality(sleepData, 19);
 
-    expect(averageSleepQuality).to.equal(4.7);
+    expect(averageSleepQuality1).to.equal(4.7);
   });
 });

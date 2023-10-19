@@ -10,3 +10,18 @@ export const averageHoursSleptPerDay = (array, id) => {
 
   return total / hours.length;
 };
+
+export const averageSleepQuality = (array, id) => {
+  let total = 0;
+  const hours = array
+    .filter((person) => person.userID === id)
+    .map((person1) => person1.sleepQuality);
+
+  hours.forEach((dailyHours) => {
+    total += dailyHours;
+  });
+
+  return total / hours.length;
+};
+
+

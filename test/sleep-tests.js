@@ -649,9 +649,9 @@ describe("Specific Hours on Day Slept", () => {
       },
     ];
 
-    const hoursSlept = hoursSleptOnDay(sleepData, 2);
+    const hoursSlept = hoursSleptOnDay(sleepData, 2, "2023/03/24");
 
-    expect(hoursSlept).to.equal('8.4');
+    expect(hoursSlept).to.equal(8.4);
   });
 });
 

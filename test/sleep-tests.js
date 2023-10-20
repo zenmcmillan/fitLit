@@ -1,6 +1,6 @@
 import { expect } from "chai";
 
-const { averageHoursSleptPerDay, averageSleepQuality} = require('./sleep-functions.js')
+const { averageHoursSleptPerDay, averageSleepQuality, hoursSleptOnDay, sleepQualityDay} = require('./sleep-functions.js')
 
 describe("Average Hours Slept for a User", () => {
   it("should give the average daily hours slept of a particular user", () => {
@@ -623,5 +623,63 @@ describe("Average Sleep Quality", () => {
     const averageSleepQuality1 = averageSleepQuality(sleepData, 19);
 
     expect(averageSleepQuality1).to.equal('4.7');
+  });
+});
+
+describe("Specific Hours on Day Slept", () => {
+  it("should give the hours slept on a specific day for a user", () => {
+    const sleepData = [
+      {
+        userID: 1,
+        date: "2023/03/24",
+        hoursSlept: 9.6,
+        sleepQuality: 4.3,
+      },
+      {
+        userID: 2,
+        date: "2023/03/24",
+        hoursSlept: 8.4,
+        sleepQuality: 3.5,
+      },
+      {
+        userID: 3,
+        date: "2023/03/24",
+        hoursSlept: 9.7,
+        sleepQuality: 4.7,
+      },
+    ];
+
+    const hoursSlept = hoursSleptOnDay(sleepData, 2);
+
+    expect(hoursSlept).to.equal('8.4');
+  });
+});
+
+describe("Specific Day of Sleep Quality", () => {
+  it("should give the sleep quality of a user on a specific day", () => {
+    const sleepData = [
+      {
+        userID: 1,
+        date: "2023/03/24",
+        hoursSlept: 9.6,
+        sleepQuality: 4.3,
+      },
+      {
+        userID: 2,
+        date: "2023/03/24",
+        hoursSlept: 8.4,
+        sleepQuality: 3.5,
+      },
+      {
+        userID: 3,
+        date: "2023/03/24",
+        hoursSlept: 9.7,
+        sleepQuality: 4.7,
+      },
+    ];
+
+    const sleepQuality = sleepQualityDay(sleepData, 2);
+
+    expect(sleepQuality).to.equal('3.5');
   });
 });

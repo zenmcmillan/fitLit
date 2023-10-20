@@ -14,11 +14,12 @@ import './images/turing-logo.png';
 //console.log("User Data:", users);
 
 // Example of one way to import functions from the domUpdates file.  You will delete these examples.
-import { exampleFunction1, exampleFunction2, showUserInfo, showAverages,showWaterWeek, showUserSleepInfo, showUserSleepInfo2, showSleepWeek } from './domUpdates';
+import { exampleFunction1, exampleFunction2, showUserInfo, showAverages,showWaterWeek, showUserSleepInfo, showUserSleepInfo2, showSleepWeek, showActivityInfo } from './domUpdates';
 import { averageStepGoals } from '../test/users-functions';
-import { give7DayWaterConsumption, giveAverageWaterConsumption, fluidOuncesForDay, giveWaterConsumptionforSpecificDay } from '../test/hydration-functions';
+import { give7DayWaterConsumption } from '../test/hydration-functions';
 import { fetchUserData, fetchHydrationData, fetchSleepData, fetchActivityData} from './apiCalls';
 import { averageHoursSleptPerDay, averageSleepQuality, give7DaySleepHours, give7DaySleepQuality } from '../test/sleep-functions';
+import { milesWalked } from '../test/activity-functions';
 
 exampleFunction1('Travis');
 exampleFunction2('Travis')
@@ -37,8 +38,8 @@ const populateDOM3 = (data) => {
   renderSleepInfo(data)
 };
   
-const populateDOM4 = (data) => {
-  
+const populateDOM4 = (data, data1) => {
+  renderActivityInfo(data, data1)
 };
 
 window.addEventListener('load', () => {
@@ -51,7 +52,7 @@ window.addEventListener('load', () => {
       populateDOM(userData);
       populateDOM2(hydrationData);
       populateDOM3(sleepData);
-      populateDOM4(activityData);
+      populateDOM4(activityData, userData);
     })
     .catch((error) => {
       console.error("An error occurred:", error);
@@ -92,12 +93,16 @@ const allAverages = (data) =>{
     showAverages(averages)
   }
 
-const grabSleepWeek = (data) =>{
+const grabSleepWeek = (data) => {
   let sleepWeekHours = give7DaySleepHours(data,index, "2023/06/25")
   let sleepWeekQuality = give7DaySleepQuality(data,index, "2023/06/25")
   showSleepWeek(sleepWeekHours, sleepWeekQuality)
   }
-    
+
+  const renderActivityInfo = (data, data1) => {
+    let miles = milesWalked(data, data1, 1, '2023/03/24')
+    showActivityInfo(miles)
+  }
 
 
 

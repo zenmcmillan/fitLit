@@ -20,22 +20,23 @@ const allUserAverageSteps = document.querySelector("#all-users-average-steps")
 const hydrationContent = document.querySelector("#hydration-content")
 const sleepContentSection = document.querySelector('#sleep-content')
 const sleepContent = document.querySelector("#sleep-content")
+const activityContent = document.querySelector('#activity-content')
+
+const showActivityInfo = (data) => {
+activityContent.innerHTML += `${data}`
+
+}
 
 const showUserSleepInfo = (data) => {
-
-  
-
   sleepContentSection.innerHTML += `<p>Average Hours Slept - ${data}</p>`
 }
 
 const showUserSleepInfo2 = (data) => {
-
   sleepContentSection.innerHTML += `<p>Average Sleep Quality - ${data}</p>`
 }
 
 const showWaterWeek = (waterWeek) =>{
-  hydrationContent.innerHTML = ""
-  hydrationContent.innerHTML += `<p>You drank ${waterWeek}over the course of the week</p>`
+  hydrationContent.innerHTML += `<p>${waterWeek}</p>`
 }
 
 const showAverages = (averages) => {
@@ -90,6 +91,7 @@ export {
   showWaterWeek,
   showUserSleepInfo,
   showUserSleepInfo2,
+  showActivityInfo,
   exampleFunction1,
   exampleFunction2,
   showSleepWeek

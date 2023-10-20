@@ -650,8 +650,11 @@ describe("Specific Hours on Day Slept", () => {
     ];
 
     const hoursSlept = hoursSleptOnDay(sleepData, 2, "2023/03/24");
-
+    const hoursSlept2 = hoursSleptOnDay(sleepData, 3, "2023/03/24");
+    const hoursSlept3 = hoursSleptOnDay(sleepData, 1, "2023/03/24");
     expect(hoursSlept).to.equal(8.4);
+    expect(hoursSlept2).to.equal(9.7);
+    expect(hoursSlept3).to.equal(9.6);
   });
 });
 
@@ -679,7 +682,10 @@ describe("Specific Day of Sleep Quality", () => {
     ];
 
     const sleepQuality = sleepQualityDay(sleepData, 3, "2023/03/24");
-
+    const sleepQuality2 = sleepQualityDay(sleepData, 1, "2023/03/24");
+    const sleepQuality3 = sleepQualityDay(sleepData, 2, "2023/03/24");
     expect(sleepQuality).to.equal(4.7);
+    expect(sleepQuality2).to.equal(4.3);
+    expect(sleepQuality3).to.equal(3.5);
   });
 });

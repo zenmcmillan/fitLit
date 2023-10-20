@@ -40,7 +40,7 @@ const populateDOM3 = (data) => {
   
 const populateDOM4 = (data, data1) => {
   renderActivityInfo(data, data1)
-//   renderActivityData(data1)
+   renderActivityData(data)
 };
 
 window.addEventListener('load', () => {
@@ -75,9 +75,9 @@ const renderUserInfo = (data) => {
     showUserInfo(index, data)
 }
 
-// const renderActivityData = (data) =>{
-//   showUserActivity(index,data)
-// }
+const renderActivityData = (data) =>{
+  showUserActivity(index,data)
+}
 
 const renderSleepInfo = (data) => {
   let average = averageHoursSleptPerDay(data, index) 

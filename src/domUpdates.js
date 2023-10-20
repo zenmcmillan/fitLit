@@ -22,14 +22,14 @@ const sleepContentSection = document.querySelector('#sleep-content')
 const sleepContent = document.querySelector("#sleep-content")
 const activityContent = document.querySelector('#activity-content')
 
-// const showUserActivity = (userId, activityData) => {
-//   const userActivities = activityData.filter((activity) => activity.userID === userId)
-//     activityContent.innerHTML += `
-//       <p>Number of Steps: ${userActivity.numSteps}</p>
-//       <p>Minutes Active: ${userActivity.minutesActive}</p>
-//       <p>Flights of Stairs: ${userActivity.flightsOfStairs}</p>
-//     `
-// }
+const showUserActivity = (userId, data) => {
+  const userActivities = data.find((activity) => activity.userID === userId)
+    activityContent.innerHTML += `
+      <p>Number of Steps: ${userActivities.numSteps}</p>
+      <p>Minutes Active: ${userActivities.minutesActive}</p>
+      <p>Flights of Stairs: ${userActivities.flightsOfStairs}</p>
+    `
+}
 
 const showActivityInfo = (data) => {
 activityContent.innerHTML += `${data}`
@@ -101,7 +101,7 @@ export {
   showUserSleepInfo,
   showUserSleepInfo2,
   showActivityInfo,
-  // showUserActivity,
+  showUserActivity,
   exampleFunction1,
   exampleFunction2,
   showSleepWeek

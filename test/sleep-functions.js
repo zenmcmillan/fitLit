@@ -24,4 +24,12 @@ export const averageSleepQuality = (array, id) => {
   return (total / hours.length).toFixed(1);
 };
 
+const hoursSleptOnDay = (array, id, date) => {
+  const userData = array.filter(person => person.userID === id && person.date === date);
+  return userData.map(user => user.hoursSlept);  
+};
 
+export const sleepQualityDay = (array, id, date) => {
+  const userData = array.filter(person => person.userID === id && person.date === date);
+  return userData.map(user => user.sleepQuality);
+};

@@ -34,8 +34,8 @@ const showUserSleepInfo2 = (data) => {
 }
 
 const showWaterWeek = (waterWeek) =>{
-  hydrationContent.innerHTML = ""
-  hydrationContent.innerHTML += `<p>You drank ${waterWeek}over the course of the week</p>`
+  
+  hydrationContent.innerHTML += `<p>${waterWeek}</p>`
 }
 
 const showAverages = (averages) => {

@@ -39,8 +39,8 @@ describe("Calculate Miles Walked", () => {
     ];
 
 
-    const averageHoursSlept = averageHoursSleptPerDay(sleepData, 19);
+    const milesWalked1 = milesWalked(activityData, users, 1, "2023/03/24");
 
-    expect(averageHoursSlept).to.equal("9.9");
+    expect(milesWalked1).to.equal("13.1");
   });
 });

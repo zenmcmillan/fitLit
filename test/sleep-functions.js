@@ -30,6 +30,6 @@ export const hoursSleptOnDay = (array, id, date) => {
 };
 
 export const sleepQualityDay = (array, id, date) => {
-  const userData = array.filter(person => person.userID === id && person.date === date);
-  return userData.map(person => person.sleepQuality);
+  const qualityDay = array.find(person => person.userID === id && person.date === date);
+  return qualityDay.sleepQuality
 };

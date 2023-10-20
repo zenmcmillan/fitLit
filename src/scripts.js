@@ -14,12 +14,12 @@ import './images/turing-logo.png';
 //console.log("User Data:", users);
 
 // Example of one way to import functions from the domUpdates file.  You will delete these examples.
-import { exampleFunction1, exampleFunction2, showUserInfo, showAverages,showWaterWeek, showUserSleepInfo, showUserSleepInfo2, showSleepWeek, showActivityInfo } from './domUpdates';
+import { exampleFunction1, exampleFunction2, showUserInfo, showAverages,showWaterWeek, showUserSleepInfo, showUserSleepInfo2, showSleepWeek, showActivityInfo, showUserActivity } from './domUpdates';
 import { averageStepGoals } from '../test/users-functions';
 import { give7DayWaterConsumption } from '../test/hydration-functions';
 import { fetchUserData, fetchHydrationData, fetchSleepData, fetchActivityData} from './apiCalls';
 import { averageHoursSleptPerDay, averageSleepQuality, give7DaySleepHours, give7DaySleepQuality } from '../test/sleep-functions';
-import { milesWalked } from '../test/activity-functions';
+import { milesWalked, didMeetStepGoal } from '../test/activity-functions';
 
 exampleFunction1('Travis');
 exampleFunction2('Travis')
@@ -40,6 +40,7 @@ const populateDOM3 = (data) => {
   
 const populateDOM4 = (data, data1) => {
   renderActivityInfo(data, data1)
+//   renderActivityData(data1)
 };
 
 window.addEventListener('load', () => {
@@ -72,8 +73,11 @@ const getRandomIndex = (array) => {
 const renderUserInfo = (data) => {
      index = getRandomIndex(data)
     showUserInfo(index, data)
-    
 }
+
+// const renderActivityData = (data) =>{
+//   showUserActivity(index,data)
+// }
 
 const renderSleepInfo = (data) => {
   let average = averageHoursSleptPerDay(data, index) 
@@ -100,8 +104,10 @@ const grabSleepWeek = (data) => {
   }
 
   const renderActivityInfo = (data, data1) => {
-    let miles = milesWalked(data, data1, 1, '2023/03/24')
-    showActivityInfo(miles)
+    let miles = milesWalked(data, data1, index, '2023/03/24')
+    let metGoal = didMeetStepGoal(data, data1, index, "2023/06/25")
+    showActivityInfo(miles)    
+    showActivityInfo(metGoal)
   }
 
 

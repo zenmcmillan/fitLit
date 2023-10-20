@@ -4,7 +4,6 @@ const give7DaySleepHours = (array, id, theDate) => {
     let arr = [];
   
     const user = array.filter((person) => person.userID === id);
-    console.log(user)
     const index = user.findIndex((element) => element.date === theDate);
   
     for (let i = index; i < index + 7; i++) {

@@ -22,8 +22,8 @@ const allUserAverageSteps = document.querySelector("#all-users-average-steps")
 const hydrationContent = document.querySelector("#hydration-content")
 const sleepContent = document.querySelector("#sleep-content")
 
-const showSleepWeek = (sleepWeek) =>{
-  sleepContent.innerHTML += `<p>Your sleep was crazy this week! Here is how!${sleepWeek}.</p>`
+const showSleepWeek = (sleepWeekHours,sleepWeekQuality) =>{
+  sleepContent.innerHTML += `<p>Your sleep was crazy this week! Here is how much sleep you got!${sleepWeekHours}hours and a quality of ${sleepWeekQuality}</p>`
 }
 
 const showWaterWeek = (waterWeek) =>{

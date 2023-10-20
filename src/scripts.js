@@ -10,7 +10,7 @@ import './images/turing-logo.png';
 
 // An example of how you tell webpack to use a JS file
 //import users from './data/users';
-// import { hydrationData } from './data/hydration';
+import { sleepData } from './data/sleepData';
 //console.log("User Data:", users);
 
 // Example of one way to import functions from the domUpdates file.  You will delete these examples.
@@ -18,7 +18,7 @@ import { exampleFunction1, exampleFunction2, showUserInfo, showAverages,showWate
 import { averageStepGoals } from '../test/users-functions';
 import { give7DayWaterConsumption, giveAverageWaterConsumption, fluidOuncesForDay, giveWaterConsumptionforSpecificDay } from '../test/hydration-functions';
 import { fetchUserData, fetchHydrationData, fetchSleepData, fetchActivityData} from './apiCalls';
-import { give7DaySleepHours, give7DaySleepQuality } from '../sleepFunctions';
+import { give7DaySleepHours, give7DaySleepQuality } from '../test/sleepFunctions';
 
 exampleFunction1('Travis');
 exampleFunction2('Travis')
@@ -33,7 +33,7 @@ const populateDOM2 = (data) => {
 };
 
 const populateDOM3 = (data) => {
-    showSleepWeek(data)
+    grabSleepWeek(data)
 };
 
 const populateDOM4 = (data) => {
@@ -46,6 +46,7 @@ window.addEventListener('load', () => {
       const userData = data[0];
       const hydrationData = data[1];
       const sleepData = data[2];
+      console.log(sleepData)
       const activityData = data[3];
       populateDOM(userData);
       populateDOM2(hydrationData);
@@ -83,9 +84,9 @@ const allAverages = (data) =>{
   }
 
 const grabSleepWeek = (data) =>{
-    let sleepWeekHours = give7DaySleepHours(data,index, "2023,06,25")
-    let sleepWeekQuality = give7DaySleepQuality(data,index, "2023,06,25")
-    showSleepWeek(sleepWeekHours+sleepWeekQuality)
+    let sleepWeekHours = give7DaySleepHours(data,index, "2023/06/25")
+    let sleepWeekQuality = give7DaySleepQuality(data,index, "2023/06/25")
+    showSleepWeek(sleepWeekHours, sleepWeekQuality)
 }
 
 

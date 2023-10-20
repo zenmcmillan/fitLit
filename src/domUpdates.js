@@ -19,6 +19,7 @@ const averageSteps = document.querySelector("#user-average-steps")
 const allUserAverageSteps = document.querySelector("#all-users-average-steps")
 const hydrationContent = document.querySelector("#hydration-content")
 const sleepContentSection = document.querySelector('#sleep-content')
+const sleepContent = document.querySelector("#sleep-content")
 
 const showUserSleepInfo = (data) => {
 
@@ -76,6 +77,11 @@ const showUserInfo = (userId, array) => {
   });
 };
 
+const showSleepWeek = (sleepWeekHours, sleepWeekQuality) =>{
+  sleepContentSection.innerHTML += `
+  <p>Your sleep was crazy this week! Here is how much sleep you got!${sleepWeekHours}hours and a quality of ${sleepWeekQuality}</p>`
+}
+
 
 export {
   showUserInfo,
@@ -86,4 +92,5 @@ export {
   showUserSleepInfo2,
   exampleFunction1,
   exampleFunction2,
+  showSleepWeek
 };

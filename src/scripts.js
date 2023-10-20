@@ -93,7 +93,7 @@ const allAverages = (data) =>{
     showAverages(averages)
   }
 
-const grabSleepWeek = (data) =>{
+const grabSleepWeek = (data) => {
   let sleepWeekHours = give7DaySleepHours(data,index, "2023/06/25")
   let sleepWeekQuality = give7DaySleepQuality(data,index, "2023/06/25")
   showSleepWeek(sleepWeekHours, sleepWeekQuality)

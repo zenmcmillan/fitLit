@@ -41,6 +41,6 @@ describe("Calculate Miles Walked", () => {
 
     const milesWalked1 = milesWalked(activityData, users, 1, "2023/03/24");
 
-    expect(milesWalked1).to.equal("13.1");
+    expect(milesWalked1).to.equal("On 2023/03/24 you walked 13.1 miles");
   });
 });

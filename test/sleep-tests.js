@@ -678,8 +678,8 @@ describe("Specific Day of Sleep Quality", () => {
       },
     ];
 
-    const sleepQuality = sleepQualityDay(sleepData, 2);
+    const sleepQuality = sleepQualityDay(sleepData, 3, "2023/03/24");
 
-    expect(sleepQuality).to.equal('3.5');
+    expect(sleepQuality).to.equal(4.7);
   });
 });

@@ -93,7 +93,7 @@ const showSleepWeek = (sleepWeekHours, sleepWeekQuality) =>{
   <p>Your sleep was crazy this week! Here is how much sleep you got, ${sleepWeekHours} hours and a quality of ${sleepWeekQuality}/5!</p>`
 }
 //hours slept and quality of sleep on specific day.
-const gshowLatestSleep = (sleepToday, sleepQualityToday) => {
+const showLatestSleep = (sleepToday, sleepQualityToday) => {
   latestSleep.innerHTML += `
   <p>You slept ${sleepToday} hours last night!</p>
   <p>Your sleep quality was ${sleepQualityToday} last night!`

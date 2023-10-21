@@ -1,6 +1,6 @@
 //NOTE: Your DOM manipulation will occur in this file
 
-import { averageStepGoals } from "../test/users-functions";
+// import { averageStepGoals } from "../test/users-functions";
 
 //Here are 2 example functions just to demonstrate one way you can export/import between the two js files. You'll want to delete these once you get your own code going.
 const exampleFunction1 = (person) => {
@@ -13,14 +13,13 @@ const exampleFunction2 = (person) => {
 
 // query selectors
 
-const profileSection = document.querySelector('#user-expandable-content');
+const profileSection = document.querySelector('.profile-section');
 const welcome = document.querySelector('.welcome-sign');
-const averageSteps = document.querySelector("#user-average-steps")
-const allUserAverageSteps = document.querySelector("#all-users-average-steps")
+const userAverageSteps = document.querySelector(".user-average-steps")
+const allUserAverageSteps = document.querySelector(".all-users-average-steps")
 const hydrationContent = document.querySelector("#hydration-content")
 const latestSleep = document.querySelector('#sleep-content')
 const sleepContentSection = document.querySelector('#sleep-content')
-const sleepContent = document.querySelector("#sleep-content")
 const activityContent = document.querySelector('#activity-content')
 
 const showUserActivity = (userId, data) => {
@@ -49,23 +48,25 @@ const showWaterWeek = (waterWeek) =>{
   hydrationContent.innerHTML += `<p>${waterWeek}</p>`
 }
 
-const showAverages = (averages) => {
-  allUserAverageSteps.innerHTML = ""
-  allUserAverageSteps.innerHTML += `<p>${averages}</p>`
-}
+// const showAverages = (averages) => {
+//   // allUserAverageSteps.innerHTML = ""
+//   allUserAverageSteps.innerHTML += `<p>The average for everyone - ${averages}</p>`
+// }
 
-const showUserAverageSteps = () => {
-  averageSteps.innerHTML +=`<p>${user.dailyStepGoal}</p>`
-}
+// const showUserAverageSteps = () => {
+//   userAverageSteps.innerHTML +=`<p> This is what your average step count IS${user.dailyStepGoal}</p>`
+// }
 
-const showUserInfo = (userId, array) => {
+const showUserInfo = (userId, array, averages) => {
   let user = array[userId - 1];
   
   welcome.innerHTML = "";
 
   welcome.innerHTML += `<p>Welcome ${user.name}</p>`;
   
-  averageSteps.innerHTML +=`<p>${user.dailyStepGoal}</p>`
+  userAverageSteps.innerHTML +=`<p>Your average step count - ${user.dailyStepGoal}</p>`
+
+  allUserAverageSteps.innerHTML += `<p>The average for everyone - ${averages}</p>`;
   
   profileSection.innerHTML = '';
 
@@ -101,8 +102,8 @@ const showLatestSleep = (sleepToday, sleepQualityToday) => {
 
 export {
   showUserInfo,
-  showAverages,
-  showUserAverageSteps,
+  //showAverages,
+  //showUserAverageSteps,
   showWaterWeek,
   showUserSleepInfo,
   showUserSleepInfo2,

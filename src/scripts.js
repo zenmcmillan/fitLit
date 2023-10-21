@@ -26,7 +26,7 @@ exampleFunction2('Travis')
 
 const populateDOM = (data) => {
   renderUserInfo(data)
-  allAverages(data)
+ // allAverages(data)
 };
 
 const populateDOM2 = (data) => {
@@ -63,17 +63,14 @@ window.addEventListener('load', () => {
 
 let index 
 
-// 2023/06/25 - 2023/07/01
-
-
-
 const getRandomIndex = (array) => {
     return Math.floor(Math.random() * array.length);
 };
 
 const renderUserInfo = (data) => {
-     index = getRandomIndex(data)
-    showUserInfo(index, data)
+  index = getRandomIndex(data);
+  let averages = averageStepGoals(data);
+  showUserInfo(index, data, averages);
 }
 
 const renderActivityData = (data) =>{
@@ -93,10 +90,10 @@ const grabWaterWeek = (data) =>{
 }
 
 
-const allAverages = (data) =>{
-    let averages = averageStepGoals(data)
-    showAverages(averages)
-  }
+// const allAverages = (data) =>{
+//     let averages = averageStepGoals(data)
+//     //showAverages(averages)
+//   }
 
 const grabSleepWeek = (data) => {
   let sleepWeekHours = give7DaySleepHours(data,index, "2023/06/25")

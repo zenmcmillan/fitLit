@@ -112,9 +112,9 @@ const renderActivityInfo = (data, data1) => {
 }
 
 const grapLatestSleep = (data, data1) => {
-let sleepToday = hoursSleptOnDay(data, data1, '2023/07/01')
-let sleepQualityToday = sleepQualityDay(data, data1, '2023/07/01')
-showLatestSleep(sleepToday, sleepQualityToday)
+  let sleepToday = hoursSleptOnDay(data, data1, '2023/07/01')
+  let sleepQualityToday = sleepQualityDay(data, data1, '2023/07/01')
+  showLatestSleep(sleepToday, sleepQualityToday)
 }
 
 

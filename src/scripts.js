@@ -111,9 +111,9 @@ const renderActivityInfo = (data, data1) => {
   showActivityInfo(metGoal)
 }
 
-const grapLatestSleep = (data, data1) => {
-  let sleepToday = hoursSleptOnDay(data, data1, '2023/07/01')
-  let sleepQualityToday = sleepQualityDay(data, data1, '2023/07/01')
+const grapLatestSleep = (data) => {
+  let sleepToday = hoursSleptOnDay(data, index, '2023/07/01')
+  let sleepQualityToday = sleepQualityDay(data, index, '2023/07/01')
   showLatestSleep(sleepToday, sleepQualityToday)
 }
 

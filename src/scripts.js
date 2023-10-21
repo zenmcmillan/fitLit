@@ -36,6 +36,7 @@ const populateDOM2 = (data) => {
 const populateDOM3 = (data) => {
   grabSleepWeek(data)
   renderSleepInfo(data)
+  grapLatestSleep(data)
 };
   
 const populateDOM4 = (data, data1) => {
@@ -110,10 +111,10 @@ const renderActivityInfo = (data, data1) => {
   showActivityInfo(metGoal)
 }
 
-const grapLatestSleep = (data) => {
-let sleepToday = hoursSleptOnDay(data, id, date)
-let sleepQualityToday = sleepQualityDay(data, id, date)
-showLatestSleep(sleepToday, sleepQualityToday)ss
+const grapLatestSleep = (data, data1) => {
+let sleepToday = hoursSleptOnDay(data, data1, '2023/07/01')
+let sleepQualityToday = sleepQualityDay(data, data1, '2023/07/01')
+showLatestSleep(sleepToday, sleepQualityToday)
 }
 
 

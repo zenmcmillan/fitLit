@@ -1,61 +1,28 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Fitlit</title>
-</head>
-<body>
-  <section class="title">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fit Lit - Activity Tracker</title>
+  </head>
+  <body>
     <h1>Fit Lit</h1>
-  </section>
-  <section class="welcome-sign"></section>
-  
-  
+    <section class="welcome-sign"></section>
     <div class="profile-section"> </div>
-       <div class="friends-section"></div>
-   
-    
-     
+    <div class="friends-section"></div>
     <p class="user-average-steps"></p>
     <p class="all-users-average-steps"></span>
-   
-      
-  </section>
-  <section class="info-sections">
-    <section class="activity-info">
-      <div class="expander" onclick="toggleExpander(this)"></div>
-      <span id="activity-name">Activity</span>
-      <div class="block" id="activity-content">
-        
-      </div>
-    </section>
-    <section class="sleep-info">
-      <div class="expander" onclick="toggleExpander(this)"></div>
-      <span id="sleep-name">Sleep</span>
-      <div class="block" id="sleep-content">
-     
-      </div>
-    </section>
-    <section class="hydration-info">
-      <div class="expander" onclick="toggleExpander(this)"></div>
-      <span id="hydration-name">Hydration</span>
-      <div class="block" id="hydration-content">
-        You have consumed 0 Fluid Ounces of water today!
-      </div>
-    </section>
-  </section>
-  <button class="goodbye-user-btn" id="goodbye-btn">
-    Goodbye User
-  </button>
-  <script src="bundle.js"></script>
-  <script>
-    // Will need to move function to another folder in the future and
-    // tie it back to the html with an id
-    function toggleExpander(expander) {
-      const block = expander.nextElementSibling.nextElementSibling
-      expander.classList.toggle("expanded")
-      block.classList.toggle("expanded")
-    }
-  </script>
-</body>
+    <p class="activity-name">Activity</p>
+    <div class="activity-content"></div>
+    <p class="sleep-name">Sleep</p>
+    <div class="sleep-content"></div>
+    <p class="hydration-name">Hydration</p>
+    <div class="hydration-content"></div>
+    <p>You have consumed 0 Fluid Ounces of water today!</p>
+  </body>
+ <script src="bundle.js"></script>
 </html>
+
+
+ 
+

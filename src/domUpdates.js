@@ -15,12 +15,12 @@ const exampleFunction2 = (person) => {
 
 const profileSection = document.querySelector('.profile-section');
 const welcome = document.querySelector('.welcome-sign');
-const userAverageSteps = document.querySelector(".user-average-steps")
-const allUserAverageSteps = document.querySelector(".all-users-average-steps")
-const hydrationContent = document.querySelector("#hydration-content")
-const latestSleep = document.querySelector('#sleep-content')
-const sleepContentSection = document.querySelector('#sleep-content')
-const activityContent = document.querySelector('#activity-content')
+const userAverageSteps = document.querySelector('.user-average-steps')
+const allUserAverageSteps = document.querySelector('.all-users-average-steps')
+const hydrationContent = document.querySelector('.hydration-content')
+const latestSleep = document.querySelector('.sleep-content')
+const sleepContentSection = document.querySelector('.sleep-content')
+const activityContent = document.querySelector('.activity-content')
 
 const showUserActivity = (userId, data) => {
   const userActivities = data.find((activity) => activity.userID === userId)

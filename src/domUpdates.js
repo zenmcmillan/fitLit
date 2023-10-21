@@ -18,6 +18,7 @@ const welcome = document.querySelector('.welcome-sign');
 const averageSteps = document.querySelector("#user-average-steps")
 const allUserAverageSteps = document.querySelector("#all-users-average-steps")
 const hydrationContent = document.querySelector("#hydration-content")
+const latestSleep = document.querySelector('#sleep-content')
 const sleepContentSection = document.querySelector('#sleep-content')
 const sleepContent = document.querySelector("#sleep-content")
 const activityContent = document.querySelector('#activity-content')
@@ -91,7 +92,12 @@ const showSleepWeek = (sleepWeekHours, sleepWeekQuality) =>{
   sleepContentSection.innerHTML += `
   <p>Your sleep was crazy this week! Here is how much sleep you got, ${sleepWeekHours} hours and a quality of ${sleepWeekQuality}/5!</p>`
 }
-
+//hours slept and quality of sleep on specific day.
+const showLatestSleep = (sleepToday, sleepQualityToday) => {
+  latestSleep.innerHTML += `
+  <p>You slept ${sleepToday} hours last night!</p>
+  <p>Your sleep quality was ${sleepQualityToday} last night!`
+}
 
 export {
   showUserInfo,
@@ -104,5 +110,6 @@ export {
   showUserActivity,
   exampleFunction1,
   exampleFunction2,
-  showSleepWeek
+  showSleepWeek,
+  showLatestSleep
 };

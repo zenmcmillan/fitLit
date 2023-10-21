@@ -14,11 +14,11 @@ import './images/turing-logo.png';
 //console.log("User Data:", users);
 
 // Example of one way to import functions from the domUpdates file.  You will delete these examples.
-import { exampleFunction1, exampleFunction2, showUserInfo, showAverages,showWaterWeek, showUserSleepInfo, showUserSleepInfo2, showSleepWeek, showActivityInfo, showUserActivity } from './domUpdates';
+import { exampleFunction1, exampleFunction2, showUserInfo, showAverages,showWaterWeek, showUserSleepInfo, showUserSleepInfo2, showSleepWeek, showActivityInfo, showUserActivity, showLatestSleep } from './domUpdates';
 import { averageStepGoals } from '../test/users-functions';
 import { give7DayWaterConsumption } from '../test/hydration-functions';
 import { fetchUserData, fetchHydrationData, fetchSleepData, fetchActivityData} from './apiCalls';
-import { averageHoursSleptPerDay, averageSleepQuality, give7DaySleepHours, give7DaySleepQuality } from '../test/sleep-functions';
+import { averageHoursSleptPerDay, averageSleepQuality, give7DaySleepHours, give7DaySleepQuality, hoursSleptOnDay, sleepQualityDay } from '../test/sleep-functions';
 import { milesWalked, didMeetStepGoal } from '../test/activity-functions';
 
 exampleFunction1('Travis');
@@ -36,6 +36,7 @@ const populateDOM2 = (data) => {
 const populateDOM3 = (data) => {
   grabSleepWeek(data)
   renderSleepInfo(data)
+  grapLatestSleep(data)
 };
   
 const populateDOM4 = (data, data1) => {
@@ -103,13 +104,18 @@ const grabSleepWeek = (data) => {
   showSleepWeek(sleepWeekHours, sleepWeekQuality)
   }
 
-  const renderActivityInfo = (data, data1) => {
-    let miles = milesWalked(data, data1, index, '2023/03/24')
-    let metGoal = didMeetStepGoal(data, data1, index, "2023/06/25")
-    showActivityInfo(miles)    
-    showActivityInfo(metGoal)
-  }
+const renderActivityInfo = (data, data1) => {
+  let miles = milesWalked(data, data1, index, '2023/03/24')
+  let metGoal = didMeetStepGoal(data, data1, index, "2023/06/25")
+  showActivityInfo(miles)    
+  showActivityInfo(metGoal)
+}
 
+const grapLatestSleep = (data) => {
+  let sleepToday = hoursSleptOnDay(data, index, '2023/07/01')
+  let sleepQualityToday = sleepQualityDay(data, index, '2023/07/01')
+  showLatestSleep(sleepToday, sleepQualityToday)
+}
 
 
 

@@ -1,120 +1,60 @@
-# FitLit Starter Kit
+#FitLit Part 1 - Joey, Zen, Lex
 
-The details of this project are outline in [this project spec](http://frontend.turing.io/projects/fitlit.html).
+##Abstract:
+FitLit is a project that focuses on building an intuitive dashboard for activity tracking, inspired by fitness apps like Fitbit. It aims to use object and array prototype methods for data manipulation, create a user-friendly interface, write reusable code, and implement a comprehensive testing suite. The project involves processing data from activity trackers for multiple users over various days, presenting it in a clear and informative manner.
 
-## Setup
+Web development tools, including Webpack, are used to streamline the project. It's vital to configure Webpack to locate files correctly and utilize import/export syntax for modular code. The project's requirements include using the FitLit Starter Kit repository and setting up testing with mocha and chai.
 
-1. Within your group, decide on **one** person to have the project repository (repo) on their GitHub account. Then, that person should *fork* this repo - on the top right corner of this page, click the **Fork** button.
-1. Both memebers of the group should clone down the _forked_ repo. Since you don't want to name your project "activity-tracker-starter", you can use an optional argument when you run git clone (you replace the [...] with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
-1. Once you have cloned the repo, change into the directory and install the project dependencies. Run `npm install` to install project dependencies.
-1. Run `npm start` in the terminal to see the HTML page (you should see some boilerplate HTML displayed on the page).  `Control + C` is the command to stop running the local server.  Closing the terminal without stopping the server first could allow the server to continue to run in the background and cause problems. This command is not specific to Webpack; make note of it for future use.   
-1. Make sure both members of your team are collaborators on the forked repo.  
-1. Do not run `npm audit fix --force`.  This will update to the latest version of packages.  We need to be using `webpack-dev-server@3.11.2` which is not the latest version.  If you start to run into Webpack errors, first check that all group members are using the correct version.  
+FitLit consists of multiple iterations, focusing on different aspects of data processing and dashboard display, including user data, hydration, sleep, and activity. It encourages fetching data from provided endpoints instead of hardcoded data files. While third-party libraries like Day.js or Chart.js are optional, instructor approval is advised.
 
-## Testing
-
-Mocha and chai are already set up, with a boilerplate test for you..
+The project also provides an extension option for building a robust testing suite, ensuring the project's quality and functionality. In summary, FitLit aims to deliver a user-friendly fitness dashboard for tracking activity data, fostering collaboration and professionalism among team members.
 
 
-## Data Model
+##Application link:
+https://github.com/zenmcmillan/fitLit
 
-**Users**
+##Installation Instructions:
+-Click the green < code > button.
+-Copy SSH to your clipboard.
+-Open up the terminal.
+-Change into the directory you wish to clone the app into with the cd command.
+-Use the git clone command followed by pasting the copied SSH key.
+-Change into the cloned directory with the cd command.
+-Install dependencies by typing npm install into the terminal
+-Start the webpack by typong npm start into the terminal
+-Copy the link it provides that will look like this: http://localhost:8080/
+-Paste that into your web browser of choice
+-Enjoy!
 
-```
-[
-  {
-    "id": [number],
-    "name": [string],
-    "address": [string],
-    "email": [string],
-    "strideLength": [number - feet],
-    "dailyStepGoal": [number - steps],
-    "friends": [array - one-way connection to other user(s)]
-  },
-  ...more user data
-]
-```
+##Preview of App:
+(put gif here)
 
-**Activity**
+##Context:
+This was the first group project in Mod 2 that we had to assemble. We used webpacks as well as fetch requests to store variables for future use and that allowed us to populate every field of this Fitness Tracker. We had 10 days to complete the project spent about 90 hours cumulatively working togeher collaboratively. Part of the difficulty of the project came from learning new concepts such as the fetch requests and then having to utilize them in the same day. Even in spite of this, the project was completed several days in advance of the project deadline allowing time for bug fixes. 
 
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "numSteps": [number - steps],
-    "minutesActive": [number - minutes],
-    "flightsOfStairs": [number - flights]
-  },
-  ...more activity data
-]
-```
+##Contributors:
+https://github.com/zenmcmillan - Zen McMillan 
+https://github.com/JoeyStewart - Joey Stewart
+https://github.com/Jesuitman - Lex Hastings
 
-**Hydration**
+##Learning Goals:
+-Use object and array prototype methods to perform data manipulation.
+-Create a user interface that is easy to use and displays information in a clear way.
+-Write DRY, reusable code that follows SRP and trends toward function purity
+-Implement a robust testing suite using TDD.
+-Make network requests to retrieve data.
+-Collaborate productively and professionally as a team. Ensure all team members are able to be heard and contribute throughout the project.
 
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "numOunces": [number - ounces]
-  },
-  ...more hydration data
-]
-```
+##Major Wins:
+###Joey - I was able to create a skeleton for our webpage with the use of html and css. These had been my weaker areas in previous projects, but I feel that I have vastly improved on my methods in the construction phase. I have also been able to move away from using divs. Using them more sparingly. Learning how to quickly do fetch requests with my group was enlightening and I feel I can do them with speed and few issues going forward.
 
-**Sleep**
+###Zen - 
 
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "hoursSlept": [number - hours],
-    "sleepQuality": [number - unitless]
-  },
-  ...more sleep data
-]
-```
-# Pull Request
+###Lex - A major win I had was when i figured out how to link all of the data together after initially using data stored in the initial project. Finding out that we didnt need to adapt our functions too much and we could just format the fetch request to allow for easy transition was a massive wave of relief. It was nice being able to adapt our functions that we built prior for use in other areas too, such as with the sleep data and the hydration data functions for the week, it was easy to adapt them which was very nice.
 
-## Description
+##Challenges and How We Overcame Them:
+###Joey - Understanding how to manipulate the DOM and use it effectively was a challenge. Balancing out how to import which functions to their needed folders left me confused during the earlier stages of the project. Once we had figured out a path in connecting our functions to the DOM, things became much smoother and easier for the rest of the project.
 
-Please describe the purpose and context of this pull request.
+###Zen - 
 
-## Changes
-
-List the changes made in this pull request.
-
-## Reviewers
-
-- [ ] Lex
-- [ ] Zen
-- [ ] Joey
-
-## Opinions
-
-### Lex's Opinion
-- [ ] Approved
-- [ ] Requested changes
-- [ ] Not sure
-
-Comments:
-
-### Zen's Opinion
-- [ ] Approved
-- [ ] Requested changes
-- [ ] Not sure
-
-Comments:
-
-### Joey's Opinion
-- [ ] Approved
-- [ ] Requested changes
-- [ ] Not sure
-
-Comments:
-
-## Additional Notes
-
-Add any additional information or notes related to this pull request.
+###Lex - Learning how to use the DOM again after not having worked with it for a few weeks was the main challenge in the project. I felt very stumped because I hadnt worked with it much. Once it finally clicked it was nice to see my data actually appear on screen but it took a lot of collaborative and efficient struggle. 

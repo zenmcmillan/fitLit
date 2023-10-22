@@ -47,7 +47,7 @@ const give7DayWaterConsumption = (array, id, theDate) => {
   for (let i = index; i < index + 7; i++) {
     arr.push(user[i]);
   }
-  return arr.map((item) => `On ${item.date} you consumed ${item.numOunces} ounces of water<br>`);
+  return arr.map((item) => `On ${item.date} you consumed ${item.numOunces} ounces of water`);
 };
 
 

@@ -59,8 +59,6 @@ const showWaterWeek = (waterWeek) =>{
 
 const showUserInfo = (userId, array, averages) => {
   let user = array[userId - 1];
-  
-  welcome.innerHTML = "";
 
   welcome.innerHTML += `<p>Welcome ${user.name}</p>`;
   
@@ -68,9 +66,10 @@ const showUserInfo = (userId, array, averages) => {
 
   allUserAverageSteps.innerHTML += `<p>The average for everyone - ${averages}</p>`;
   
-  profileSection.innerHTML = '';
-
   profileSection.innerHTML += `
+    
+    <p>Profile</p>
+    <img class="account-circle" src="../images/account-circle.svg" alt="account cirlce">
      <p>Id Number: ${user.id}</p>
      <p>Name: ${user.name}</p>
      <p>Address: ${user.address}</p>

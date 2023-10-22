@@ -9,7 +9,7 @@ export const milesWalked = (array1, array2, id, date) => {
     2250
   ).toFixed(1);
 
-  return `<br>On ${date} you walked ${miles} miles<br>`;
+  return `On ${date} you walked ${miles} miles`;
 };
 
 
@@ -22,8 +22,8 @@ export const didMeetStepGoal = (array1, array2, id, date) =>{
     person["numSteps"] - array2[id - 1]["dailyStepGoal"]
   )
   if (stepReply >= 1){
-    return `<br>On ${date} you met your step goal! Congrats!<br>`
+    return `On ${date} you met your step goal! Congrats!`
   } else {
-    return `<br>On ${date} you did not meet your step goal! Too Bad!<br>`
+    return `On ${date} you did not meet your step goal! Too Bad!`
   }
 }

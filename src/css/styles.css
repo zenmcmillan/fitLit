@@ -4,3 +4,28 @@
   background-color: #D4E4BC;
   font-family: 'Roboto', sans-serif;
 }
+
+.title-and-welcome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-sleep-hydration-container {
+  display: flex;
+  outline: 2px solid red;
+}
+
+.profile-section-container {
+  display: flex;
+}
+
+.sleep-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.hydration-container {
+  display: flex;
+  flex-direction: column;
+}

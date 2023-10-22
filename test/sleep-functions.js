@@ -43,7 +43,7 @@ export const give7DaySleepHours = (array, id, theDate) => {
   for (let i = index; i < index + 7; i++) {
       arr.push(user[i]);
   }
-  return arr.map((item) => `On ${item.date} you slept for ${item.hoursSlept}`);
+  return arr.map((item) => `On ${item.date} you slept for ${item.hoursSlept} hours<br>`);
 };
 
 
@@ -55,6 +55,6 @@ export const give7DaySleepQuality = (array, id, theDate) => {
   for (let i = index; i < index + 7; i++) {
     arr.push(user[i]);
   }
-  return arr.map((item) => `On ${item.date} your sleep quality was ${item.sleepQuality}`);
+  return arr.map((item) => `On ${item.date} your sleep quality was ${item.sleepQuality}<br>`);
 };
 

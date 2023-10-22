@@ -3,22 +3,45 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>Fit Lit - Activity Tracker</title>
   </head>
-  <body>
-    <h1>Fit Lit</h1>
-    <section class="welcome-sign"></section>
-    <div class="profile-section"> </div>
-    <div class="friends-section"></div>
-    <p class="user-average-steps"></p>
-    <p class="all-users-average-steps"></span>
-    <p class="activity-name">Activity</p>
-    <div class="activity-content"></div>
-    <p class="sleep-name">Sleep</p>
-    <div class="sleep-content"></div>
-    <p class="hydration-name">Hydration</p>
-    <div class="hydration-content"></div>
-    <p>You have consumed 0 Fluid Ounces of water today!</p>
+  <body class="whole-page">
+    
+    <section class="title-and-welcome-container">
+      <h1 class="title">Fit Lit</h1>
+      <section class="welcome-sign"></section>
+    </section>
+
+     <section class="profile-section-container">
+      <div class="profile-section"></div>
+       <div class="friends-section"></div>
+    </section>
+    
+    <section class="sleep-container">
+      <p class="sleep-name">Sleep</p>
+      <div class="sleep-content"></div>
+    </section>
+    
+    <section class="hydration-container"> 
+      <p class="hydration-name">Hydration</p>
+      <div class="hydration-content"></div>
+      <p>You have consumed 0 Fluid Ounces of water today!</p>
+    </section>
+  
+  <section class="activity-section">
+    <p class="activity-left-container">
+      <p class="activity-name">Activity</p>
+      <p class="activity-content"></p>
+    </p>
+    <p class="activity-right-container">
+      <p class="user-average-steps"></p>
+      <p class="all-users-average-steps"></p>
+    </p>
+  </section>
+  
   </body>
  <script src="bundle.js"></script>
 </html>

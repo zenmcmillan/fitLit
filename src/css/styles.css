@@ -1,0 +1,6 @@
+.whole-page {
+  display: flex;
+  flex-direction: column;
+  background-color: #D4E4BC;
+  font-family: 'Roboto', sans-serif;
+}

@@ -68,8 +68,9 @@ const showUserInfo = (userId, array, averages) => {
   
   profileSection.innerHTML += `
     
-    <p>Profile</p>
-    <img class="account-circle" src="../images/account-circle.svg" alt="account cirlce">
+   
+  
+  
      <p>Id Number: ${user.id}</p>
      <p>Name: ${user.name}</p>
      <p>Address: ${user.address}</p>

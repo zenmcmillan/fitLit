@@ -1,7 +1,8 @@
+
 .whole-page {
   display: flex;
   flex-direction: column;
-  background-color: #D4E4BC;
+   background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
   font-family: 'Roboto', sans-serif;
 }
 
@@ -23,12 +24,9 @@
   align-items: center;
 }
 
-.account-circle {
+/* .material-symbols-outlined {
   display: flex;
- height: 100px;
- width: 100px;
- 
-}
+} */
 
 .profile-section, .sleep-container, .hydration-container {
   display: flex;
@@ -39,6 +37,8 @@
   margin: 15px;
   outline: 4px solid black;
   border-radius: 6px;
+  background-color: lightblue;
+  
 }
 
 .activity-section-container {
@@ -62,21 +62,24 @@
   border: 4px solid black;
   border-radius: 6px;
   width: 500px;
+  background-color: lightblue;  
 }
 
 .activity-right-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  outline: 4px solid black;
+  border: 4px solid black;
+  border-radius: 6px;
   width: 500px;
+  background-color: lightblue;  
 }
 
 .activity-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center
 }
 
 

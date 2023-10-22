@@ -68,9 +68,6 @@ const showUserInfo = (userId, array, averages) => {
   
   profileSection.innerHTML += `
     
-   
-  
-  
      <p>Id Number: ${user.id}</p>
      <p>Name: ${user.name}</p>
      <p>Address: ${user.address}</p>
@@ -89,12 +86,23 @@ const showUserInfo = (userId, array, averages) => {
   });
 };
 
-const showSleepWeek = (sleepWeekHours, sleepWeekQuality) =>{
-  sleepContentSection.innerHTML += `
-  <p>Here's how much sleep you got this week</p>
-  <p> ${sleepWeekQuality}</p>
-  <p> ${sleepWeekHours}!</p>`;
+// const showSleepWeek = (sleepWeekHours, sleepWeekQuality) => {
+
+//   sleepContentSection.innerHTML += `
+//   <p>Here's how much sleep you got this week</p>
+//   <p> ${sleepWeekQuality}</p><br>`
+  
+// }
+
+const showSleepWeek = (sleepWeekHours) => {
+
+  sleepWeekHours.forEach(week => {
+    sleepContentSection.innerHTML += `
+      <p>${week}<p>
+    `
+  })
 }
+  
 //hours slept and quality of sleep on specific day.
 const showLatestSleep = (sleepToday, sleepQualityToday) => {
   latestSleep.innerHTML += `

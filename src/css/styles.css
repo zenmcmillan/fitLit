@@ -13,19 +13,41 @@
 
 .profile-sleep-hydration-container {
   display: flex;
+  justify-content: center;
   outline: 2px solid red;
 }
 
 .profile-section-container {
   display: flex;
+  outline: 2px solid blue;
 }
 
 .sleep-container {
   display: flex;
   flex-direction: column;
+  outline: 2px solid orange;
 }
 
 .hydration-container {
   display: flex;
   flex-direction: column;
+  outline: 2px solid pink;
 }
+
+.activity-section-container {
+  display: flex;
+  outline: 2px solid red;
+}
+
+.activity-left-container {
+  display: flex;
+  flex-direction: column;
+  outline: 4px solid magenta;
+}
+
+.activity-name-container {
+  display: flex;
+  justify-content: center;
+  outline: 8px solid  black;
+}
+

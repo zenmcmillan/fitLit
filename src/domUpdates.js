@@ -92,7 +92,7 @@ const showUserInfo = (userId, array, averages) => {
 const showSleepWeek = (sleepWeekHours, sleepWeekQuality) =>{
   sleepContentSection.innerHTML += `
   <p>Here's how much sleep you got this week</p>
-   <p> ${sleepWeekQuality}</p>
+  <p> ${sleepWeekQuality}</p>
   <p> ${sleepWeekHours}!</p>`;
 }
 //hours slept and quality of sleep on specific day.

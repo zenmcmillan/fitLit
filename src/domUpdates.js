@@ -14,6 +14,7 @@ const exampleFunction2 = (person) => {
 // query selectors
 
 const profileSection = document.querySelector('.profile-content');
+const friendsSection = document.querySelector('.friend-content')
 const welcome = document.querySelector('.welcome-sign');
 const userAverageSteps = document.querySelector('.user-average-steps')
 const allUserAverageSteps = document.querySelector('.all-users-average-steps')
@@ -31,7 +32,7 @@ const showUserActivity = (userId, data) => {
 }
 
 const showActivityInfo = (data) => {
-activityContent.innerHTML += `${data}`
+activityContent.innerHTML += `<p>${data}</p>`
 
 }
 
@@ -85,7 +86,7 @@ const showUserInfo = (userId, array, averages) => {
 
    usersFriends.forEach((friend) => {
 
-    profileSection.innerHTML += `
+    friendsSection.innerHTML += `
     <p>${array[friend - 1].name}</p>
     `;
   });

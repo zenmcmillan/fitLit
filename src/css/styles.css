@@ -2,8 +2,8 @@
 .whole-page {
   display: flex;
   flex-direction: column;
-   background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
-  font-family: 'Roboto', sans-serif;
+  background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+  font-family: 'Kalam', cursive;
 }
 
 .title-and-welcome-container {
@@ -99,13 +99,45 @@
 
 .profile-content-container {
   display: flex;
+  flex-direction: column;
   height: 400px;
 }
 
 .profile-content {
   flex: 1;
-  height: 400px;
-  width: 300px;
   line-height: 1.6;
   text-align: center;
 }
+
+.title {
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 50px;
+}
+
+.welcome-sign {
+  margin-top: -50px;
+  font-size: 30px;
+}
+
+.dashboard {
+  font-weight: 700;
+  font-size: 30px;
+  margin-top: -20px;
+  margin-bottom: -10px;
+  
+}
+
+.profile-name, .sleep-name, .activity-name, .step-count-name, .hydration-name {
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.friend-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: -15px;
+  line-height: 0.2;
+  text-align: center;
+}
+

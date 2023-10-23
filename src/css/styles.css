@@ -29,11 +29,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  outline: 2px solid pink;
-  width: 360px;
+  width: 400px;
   margin: 15px;
-  outline: 4px solid black;
-  border-radius: 6px;
+  border-radius: 25px;
   background-color: lightblue;
   height: 600px;
 }
@@ -55,11 +53,9 @@
 .activity-left-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 4px solid black;
-  border-radius: 6px;
-  width: 500px;
+  text-align: center;
+  border-radius: 25px;
+  width: 550px;
   background-color: lightblue;  
 }
 
@@ -67,9 +63,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 4px solid black;
-  border-radius: 6px;
-  width: 500px;
+  border-radius: 25px;
+  width: 550px;
   background-color: lightblue;  
 }
 
@@ -90,15 +85,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  outline: 2px solid red;
+
   height: 500px;
 }
 
 .hydration-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  outline: 2px solid purple;
+  line-height: 1.6;
+ 
 }
 
 
@@ -109,8 +104,8 @@
 
 .profile-content {
   flex: 1;
-  outline: 2px solid red;
   height: 400px;
   width: 300px;
+  line-height: 1.6;
   text-align: center;
 }

@@ -1,16 +1,3 @@
-//NOTE: Your DOM manipulation will occur in this file
-
-// import { averageStepGoals } from "../test/users-functions";
-
-//Here are 2 example functions just to demonstrate one way you can export/import between the two js files. You'll want to delete these once you get your own code going.
-const exampleFunction1 = (person) => {
-  console.log(`oh hi there ${person}`)
-}
-
-const exampleFunction2 = (person) => {
-  console.log(`bye now ${person}`)
-}
-
 // query selectors
 
 const profileSection = document.querySelector('.profile-content');
@@ -54,15 +41,6 @@ const showWaterWeek = (waterWeek) =>{
 
 }
 
-// const showAverages = (averages) => {
-//   // allUserAverageSteps.innerHTML = ""
-//   allUserAverageSteps.innerHTML += `<p>The average for everyone - ${averages}</p>`
-// }
-
-// const showUserAverageSteps = () => {
-//   userAverageSteps.innerHTML +=`<p> This is what your average step count IS${user.dailyStepGoal}</p>`
-// }
-
 const showUserInfo = (userId, array, averages) => {
   let user = array[userId - 1];
 
@@ -92,14 +70,6 @@ const showUserInfo = (userId, array, averages) => {
   });
 };
 
-// const showSleepWeek = (sleepWeekHours, sleepWeekQuality) => {
-
-//   sleepContentSection.innerHTML += `
-//   <p>Here's how much sleep you got this week</p>
-//   <p> ${sleepWeekQuality}</p><br>`
-  
-// }
-
 const showSleepWeek = (sleepWeekHours) => {
 
   sleepWeekHours.forEach(week => {
@@ -109,7 +79,6 @@ const showSleepWeek = (sleepWeekHours) => {
   })
 }
   
-//hours slept and quality of sleep on specific day.
 const showLatestSleep = (sleepToday, sleepQualityToday) => {
   sleepContentSection.innerHTML += `
   <p>You slept ${sleepToday} hours last night!</p>
@@ -119,15 +88,11 @@ const showLatestSleep = (sleepToday, sleepQualityToday) => {
 
 export {
   showUserInfo,
-  //showAverages,
-  //showUserAverageSteps,
   showWaterWeek,
   showUserSleepInfo,
   showUserSleepInfo2,
   showActivityInfo,
   showUserActivity,
-  exampleFunction1,
-  exampleFunction2,
   showSleepWeek,
   showLatestSleep
 };

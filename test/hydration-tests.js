@@ -1,5 +1,5 @@
 import { expect } from "chai";
-const { give7DayWaterConsumption, giveAverageWaterConsumption, giveWaterConsumptionforSpecificDay} = require("./hydration-functions.js");
+const { give7DayWaterConsumption, giveAverageWaterConsumption, giveWaterConsumptionforSpecificDay} = require("../src/hydration-functions.js");
 
 describe("7 Day Water Consumption", () => {
   it("should give the daily water consumption of a particular user for a week starting from the date given", () => {

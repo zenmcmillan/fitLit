@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-const { getUserFromId, averageStepGoals } = require("./users-functions.js"); 
+const { getUserFromId, averageStepGoals } = require("../src/users-functions.js"); 
 
 describe('Find User', () => {
  it('should return a users data based on their id', () => {

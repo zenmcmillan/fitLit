@@ -1,7 +1,7 @@
 import { expect } from "chai";
 
 
-const { milesWalked, didMeetStepGoal } = require("./activity-functions.js");
+const { milesWalked, didMeetStepGoal } = require("../src/activity-functions.js");
 
 
 describe("Calculate Miles Walked", () => {

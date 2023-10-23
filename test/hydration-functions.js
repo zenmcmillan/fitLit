@@ -1,23 +1,3 @@
-// function averageFluidOuncesPerDay(hydratedUsers) {
-//     const userTotals = {}; 
-//     const userCounts = {}; 
-  
-//     hydratedUsers.forEach(hUser => {
-//       const userId = hUser.userID;
-//       const ounces = hUser.numOunces;
-  
-//       userTotals[userId] = userTotals[userId] + ounces;
-//       userCounts[userId] = userCounts[userId] + 1;
-//     });
-  
-//     const averages = {};
-//     Object.keys(userTotals).forEach(userId => {
-//       averages[userId] = userTotals[userId] / userCounts[userId];
-//     });
-  
-//     return averages;
-//   }
-
 const giveAverageWaterConsumption = (array, id) => {
   let total = 0;
   const filtered = array.filter((person) => person.userID === id);
@@ -26,7 +6,6 @@ const giveAverageWaterConsumption = (array, id) => {
   });
   return Math.trunc(total / filtered.length);
 };
-
 
 const giveWaterConsumptionforSpecificDay = (id, date) => {
   return hydrationData.find(person => person.userID === id && person.date === date).numOunces
@@ -47,7 +26,7 @@ const give7DayWaterConsumption = (array, id, theDate) => {
   for (let i = index; i < index + 7; i++) {
     arr.push(user[i]);
   }
-  return arr.map((item) => `On ${item.date} you drank${item.numOunces} oz. of water`);
+  return arr.map((item) => `On ${item.date} you drank ${item.numOunces} oz. of water`);
 };
 
 

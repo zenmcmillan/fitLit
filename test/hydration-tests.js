@@ -78,13 +78,13 @@ describe("7 Day Water Consumption", () => {
 
     const waterFor7Days = give7DayWaterConsumption(hydrationData, 2, "2023/03/24");
     
-    expect(waterFor7Days[0]).to.equal("On 2023/03/24 you consumed 35 ounces of water");
-    expect(waterFor7Days[1]).to.equal("On 2023/03/25 you consumed 92 ounces of water");
-    expect(waterFor7Days[2]).to.equal("On 2023/03/26 you consumed 88 ounces of water");
-    expect(waterFor7Days[3]).to.equal("On 2023/03/27 you consumed 68 ounces of water"); 
-    expect(waterFor7Days[4]).to.equal("On 2023/03/28 you consumed 50 ounces of water");
-    expect(waterFor7Days[5]).to.equal("On 2023/03/29 you consumed 57 ounces of water");
-    expect(waterFor7Days[6]).to.equal("On 2023/03/30 you consumed 28 ounces of water");
+    expect(waterFor7Days[0]).to.equal("On 2023/03/24 you drank 35 oz. of water");
+    expect(waterFor7Days[1]).to.equal("On 2023/03/25 you drank 92 oz. of water");
+    expect(waterFor7Days[2]).to.equal("On 2023/03/26 you drank 88 oz. of water");
+    expect(waterFor7Days[3]).to.equal("On 2023/03/27 you drank 68 oz. of water"); 
+    expect(waterFor7Days[4]).to.equal("On 2023/03/28 you drank 50 oz. of water");
+    expect(waterFor7Days[5]).to.equal("On 2023/03/29 you drank 57 oz. of water");
+    expect(waterFor7Days[6]).to.equal("On 2023/03/30 you drank 28 oz. of water");
   });
 });
 

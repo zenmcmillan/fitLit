@@ -1,6 +1,6 @@
 import { expect } from "chai";
 
-const { averageHoursSleptPerDay, averageSleepQuality, hoursSleptOnDay, sleepQualityDay} = require('./sleep-functions.js')
+const { averageHoursSleptPerDay, averageSleepQuality, hoursSleptOnDay, sleepQualityDay} = require('../src/sleep-functions.js')
 
 describe("Average Hours Slept for a User", () => {
   it("should give the average daily hours slept of a particular user", () => {

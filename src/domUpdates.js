@@ -1,27 +1,13 @@
-//NOTE: Your DOM manipulation will occur in this file
-
-import { averageStepGoals } from "../test/users-functions";
-
-//Here are 2 example functions just to demonstrate one way you can export/import between the two js files. You'll want to delete these once you get your own code going.
-const exampleFunction1 = (person) => {
-  console.log(`oh hi there ${person}`)
-}
-
-const exampleFunction2 = (person) => {
-  console.log(`bye now ${person}`)
-}
-
 // query selectors
 
-const profileSection = document.querySelector('#user-expandable-content');
+const profileSection = document.querySelector('.profile-content');
+const friendsSection = document.querySelector('.friend-content')
 const welcome = document.querySelector('.welcome-sign');
-const averageSteps = document.querySelector("#user-average-steps")
-const allUserAverageSteps = document.querySelector("#all-users-average-steps")
-const hydrationContent = document.querySelector("#hydration-content")
-const latestSleep = document.querySelector('#sleep-content')
-const sleepContentSection = document.querySelector('#sleep-content')
-const sleepContent = document.querySelector("#sleep-content")
-const activityContent = document.querySelector('#activity-content')
+const userAverageSteps = document.querySelector('.user-average-steps')
+const allUserAverageSteps = document.querySelector('.all-users-average-steps')
+const hydrationContent = document.querySelector('.hydration-content')
+const sleepContentSection = document.querySelector('.sleep-content')
+const activityContent = document.querySelector('.activity-content')
 
 const showUserActivity = (userId, data) => {
   const userActivities = data.find((activity) => activity.userID === userId)
@@ -33,7 +19,7 @@ const showUserActivity = (userId, data) => {
 }
 
 const showActivityInfo = (data) => {
-activityContent.innerHTML += `${data}`
+activityContent.innerHTML += `<p>${data}</p>`
 
 }
 
@@ -46,30 +32,26 @@ const showUserSleepInfo2 = (data) => {
 }
 
 const showWaterWeek = (waterWeek) =>{
-  hydrationContent.innerHTML += `<p>${waterWeek}</p>`
-}
 
-const showAverages = (averages) => {
-  allUserAverageSteps.innerHTML = ""
-  allUserAverageSteps.innerHTML += `<p>${averages}</p>`
-}
+  waterWeek.forEach(week => {
 
-const showUserAverageSteps = () => {
-  averageSteps.innerHTML +=`<p>${user.dailyStepGoal}</p>`
-}
-
-const showUserInfo = (userId, array) => {
-  let user = array[userId - 1];
+    hydrationContent.innerHTML += `<p>${week}</p>`
+  })
   
-  welcome.innerHTML = "";
+
+}
+
+const showUserInfo = (userId, array, averages) => {
+  let user = array[userId - 1];
 
   welcome.innerHTML += `<p>Welcome ${user.name}</p>`;
   
-  averageSteps.innerHTML +=`<p>${user.dailyStepGoal}</p>`
-  
-  profileSection.innerHTML = '';
+  userAverageSteps.innerHTML +=`<p>Your average step count - ${user.dailyStepGoal}</p>`
 
+  allUserAverageSteps.innerHTML += `<p>The average for everyone - ${averages}</p>`;
+  
   profileSection.innerHTML += `
+    
      <p>Id Number: ${user.id}</p>
      <p>Name: ${user.name}</p>
      <p>Address: ${user.address}</p>
@@ -82,34 +64,35 @@ const showUserInfo = (userId, array) => {
 
    usersFriends.forEach((friend) => {
 
-    profileSection.innerHTML += `
+    friendsSection.innerHTML += `
     <p>${array[friend - 1].name}</p>
     `;
   });
 };
 
-const showSleepWeek = (sleepWeekHours, sleepWeekQuality) =>{
-  sleepContentSection.innerHTML += `
-  <p>Your sleep was crazy this week! Here is how much sleep you got, ${sleepWeekHours} hours and a quality of ${sleepWeekQuality}/5!</p>`
+const showSleepWeek = (sleepWeekHours) => {
+
+  sleepWeekHours.forEach(week => {
+    sleepContentSection.innerHTML += `
+      <p>${week}<p>
+    `
+  })
 }
-//hours slept and quality of sleep on specific day.
+  
 const showLatestSleep = (sleepToday, sleepQualityToday) => {
-  latestSleep.innerHTML += `
+  sleepContentSection.innerHTML += `
   <p>You slept ${sleepToday} hours last night!</p>
-  <p>Your sleep quality was ${sleepQualityToday} last night!`
+  <p>Your sleep quality was ${sleepQualityToday} last night!</p>
+  `
 }
 
 export {
   showUserInfo,
-  showAverages,
-  showUserAverageSteps,
   showWaterWeek,
   showUserSleepInfo,
   showUserSleepInfo2,
   showActivityInfo,
   showUserActivity,
-  exampleFunction1,
-  exampleFunction2,
   showSleepWeek,
   showLatestSleep
 };

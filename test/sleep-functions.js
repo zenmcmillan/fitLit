@@ -37,13 +37,13 @@ export const sleepQualityDay = (array, id, date) => {
 export const give7DaySleepHours = (array, id, theDate) => {
   let arr = [];
   const user = array.filter((person) => person.userID === id);
-  console.log(user)
+
   const index = user.findIndex((element) => element.date === theDate);
     
   for (let i = index; i < index + 7; i++) {
       arr.push(user[i]);
   }
-  return arr.map((item) => `On ${item.date} you slept for ${item.hoursSlept}`);
+  return arr.map((item) => `On ${item.date} you slept for ${item.hoursSlept} hours`);
 };
 
 

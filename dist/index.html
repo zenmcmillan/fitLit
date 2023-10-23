@@ -1,63 +1,65 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Fitlit</title>
-</head>
-<body>
-  <section class="title">
-    <img src="./images/turing-logo.png" alt="turing logo" height="100px" width="100px">
-    <h1>Activity Tracker</h1>
-  </section>
-  <section class="welcome-sign">Welcome</section>
-  <section class="user-info">
-    <div class="expander" onclick="toggleExpander(this)"></div>
-    <span id="user-name">Profile</span>
-    <div class="block" id="user-expandable-content">
-       <div class="friends-section"></div>
-    </div>
-    <div>
-      <aside class="aside">
-      This is what your average step count is! <span id="user-average-steps"></span><br>
-      And here is the average for everyone! <span id="all-users-average-steps"></span>
-      </aside>
-      </div>
-  </section>
-  <section class="info-sections">
-    <section class="activity-info">
-      <div class="expander" onclick="toggleExpander(this)"></div>
-      <span id="activity-name">Activity</span>
-      <div class="block" id="activity-content">
-        
-      </div>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz=,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Fit Lit - Activity Tracker</title>
+  </head>
+  <body class="whole-page">
+    <section class="title-and-welcome-container">
+      <h1 class="title">Fit Lit</h1>
+      <section class="welcome-sign"></section>
     </section>
-    <section class="sleep-info">
-      <div class="expander" onclick="toggleExpander(this)"></div>
-      <span id="sleep-name">Sleep</span>
-      <div class="block" id="sleep-content">
-     
-      </div>
+    <p class="dashboard">Dashboard</p>
+    <section class="profile-sleep-hydration-container">
+      <section class="profile-container">
+        <p class="profile-name">Profile</p>
+        <span class="material-symbols-outlined">account_circle</span>
+        <div class="profile-content-container">
+          <div class="profile-content"></div>
+          <div class="friend-content"></div>
+        </div>
+      </section>
+      <section class="sleep-container">
+        <p class="sleep-name">Sleep</p>
+        <span class="material-symbols-outlined">bedtime</span>
+        <div class="sleep-content-container">
+          <div class="sleep-content"></div>
+        </div>
+      </section>
+      <section class="hydration-container"> 
+        <p class="hydration-name">Hydration</p>
+        <span class="material-symbols-outlined">water_drop</span>
+        <div class="hydration-content">You have consumed 0 Fluid Ounces of water today!</div>
+      </section>
+     </section>
+     <section class="activity-section-container">
+        <section class="activity-left-container">
+          <div class="activity-name-container">
+            <p class="activity-name">Activity</p>
+          </div>
+          <span class="material-symbols-outlined">footprint</span>
+          <p class="activity-content"></p>
+        </section>
+        <section class="activity-right-container">
+          <p class="step-count-name">Step Count</p>
+          <span class="material-symbols-outlined">barefoot</span>
+          <p class="user-average-steps"></p>
+          <p class="all-users-average-steps"></p>
+       </section>
     </section>
-    <section class="hydration-info">
-      <div class="expander" onclick="toggleExpander(this)"></div>
-      <span id="hydration-name">Hydration</span>
-      <div class="block" id="hydration-content">
-        You have consumed 0 Fluid Ounces of water today!
-      </div>
-    </section>
-  </section>
-  <button class="goodbye-user-btn" id="goodbye-btn">
-    Goodbye User
-  </button>
-  <script src="bundle.js"></script>
-  <script>
-    // Will need to move function to another folder in the future and
-    // tie it back to the html with an id
-    function toggleExpander(expander) {
-      const block = expander.nextElementSibling.nextElementSibling
-      expander.classList.toggle("expanded")
-      block.classList.toggle("expanded")
-    }
-  </script>
-</body>
+  </body>
+ <script src="bundle.js"></script>
 </html>
+
+
+ 
+

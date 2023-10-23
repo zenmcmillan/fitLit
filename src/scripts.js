@@ -1,32 +1,13 @@
-// This is the JavaScript entry file - your code begins here
-// Do not delete or rename this file ********
-
-
-// An example of how you tell webpack to use a CSS file
 import './css/styles.css';
-
-// An example of how you tell webpack to use an image (also need to link to it in the index.html)
-import './images/turing-logo.png';
-
-// An example of how you tell webpack to use a JS file
-//import users from './data/users';
-// import { hydrationData } from './data/hydration';
-//console.log("User Data:", users);
-
-// Example of one way to import functions from the domUpdates file.  You will delete these examples.
-import { exampleFunction1, exampleFunction2, showUserInfo, showAverages,showWaterWeek, showUserSleepInfo, showUserSleepInfo2, showSleepWeek, showActivityInfo, showUserActivity, showLatestSleep } from './domUpdates';
+import { showUserInfo,showWaterWeek, showUserSleepInfo, showUserSleepInfo2, showSleepWeek, showActivityInfo, showUserActivity, showLatestSleep } from './domUpdates';
 import { averageStepGoals } from '../test/users-functions';
 import { give7DayWaterConsumption } from '../test/hydration-functions';
 import { fetchUserData, fetchHydrationData, fetchSleepData, fetchActivityData} from './apiCalls';
 import { averageHoursSleptPerDay, averageSleepQuality, give7DaySleepHours, give7DaySleepQuality, hoursSleptOnDay, sleepQualityDay } from '../test/sleep-functions';
 import { milesWalked, didMeetStepGoal } from '../test/activity-functions';
 
-exampleFunction1('Travis');
-exampleFunction2('Travis')
-
 const populateDOM = (data) => {
   renderUserInfo(data)
-  allAverages(data)
 };
 
 const populateDOM2 = (data) => {
@@ -63,17 +44,14 @@ window.addEventListener('load', () => {
 
 let index 
 
-// 2023/06/25 - 2023/07/01
-
-
-
 const getRandomIndex = (array) => {
     return Math.floor(Math.random() * array.length);
 };
 
 const renderUserInfo = (data) => {
-     index = getRandomIndex(data)
-    showUserInfo(index, data)
+  index = getRandomIndex(data);
+  let averages = averageStepGoals(data);
+  showUserInfo(index, data, averages);
 }
 
 const renderActivityData = (data) =>{
@@ -91,12 +69,6 @@ const grabWaterWeek = (data) =>{
     let waterWeek = give7DayWaterConsumption(data, index, "2023/06/25")
     showWaterWeek(waterWeek)
 }
-
-
-const allAverages = (data) =>{
-    let averages = averageStepGoals(data)
-    showAverages(averages)
-  }
 
 const grabSleepWeek = (data) => {
   let sleepWeekHours = give7DaySleepHours(data,index, "2023/06/25")

@@ -24,6 +24,6 @@ export const didMeetStepGoal = (array1, array2, id, date) =>{
   if (stepReply >= 1){
     return `On ${date} you met your step goal! Congrats!`
   } else {
-    return `On ${date} you did not meet your step goal! Too Bad!`
+    return `On ${date} you did not meet your step goal!`
   }
 }

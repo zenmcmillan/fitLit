@@ -14,6 +14,7 @@
 
 .profile-sleep-hydration-container {
   display: flex;
+  align-items: flex-start;
   justify-content: space-evenly;
 }
 
@@ -24,7 +25,7 @@
   align-items: center;
 }
 
-.profile-section, .sleep-container, .hydration-container {
+.profile-container, .sleep-container, .hydration-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,8 +35,9 @@
   outline: 4px solid black;
   border-radius: 6px;
   background-color: lightblue;
-  
+  height: 600px;
 }
+
 
 .activity-section-container {
   margin-top: 25px;
@@ -78,9 +80,37 @@
   align-items: center
 }
 
+.sleep-content-container {
+  flex: 1;
+  height: 500px;
+  line-height: 1.6;
+}
+
 .sleep-content {
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  outline: 2px solid red;
+  height: 500px;
+}
+
+.hydration-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  outline: 2px solid purple;
+}
+
+
+.profile-content-container {
+  display: flex;
+  height: 400px;
+}
+
+.profile-content {
+  flex: 1;
+  outline: 2px solid red;
+  height: 400px;
+  width: 300px;
+  text-align: center;
 }

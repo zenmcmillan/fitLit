@@ -13,12 +13,11 @@ const exampleFunction2 = (person) => {
 
 // query selectors
 
-const profileSection = document.querySelector('.profile-section');
+const profileSection = document.querySelector('.profile-content');
 const welcome = document.querySelector('.welcome-sign');
 const userAverageSteps = document.querySelector('.user-average-steps')
 const allUserAverageSteps = document.querySelector('.all-users-average-steps')
 const hydrationContent = document.querySelector('.hydration-content')
-const latestSleep = document.querySelector('.sleep-content')
 const sleepContentSection = document.querySelector('.sleep-content')
 const activityContent = document.querySelector('.activity-content')
 
@@ -45,7 +44,13 @@ const showUserSleepInfo2 = (data) => {
 }
 
 const showWaterWeek = (waterWeek) =>{
-  hydrationContent.innerHTML += `<p>${waterWeek}</p>`
+
+  waterWeek.forEach(week => {
+
+    hydrationContent.innerHTML += `<p>${week}</p>`
+  })
+  
+
 }
 
 // const showAverages = (averages) => {
@@ -105,7 +110,7 @@ const showSleepWeek = (sleepWeekHours) => {
   
 //hours slept and quality of sleep on specific day.
 const showLatestSleep = (sleepToday, sleepQualityToday) => {
-  latestSleep.innerHTML += `
+  sleepContentSection.innerHTML += `
   <p>You slept ${sleepToday} hours last night!</p>
   <p>Your sleep quality was ${sleepQualityToday} last night!</p>
   `

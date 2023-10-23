@@ -14,19 +14,19 @@ The project also provides an extension option for building a robust testing suit
 https://github.com/zenmcmillan/fitLit
 
 ## Installation Instructions:
--Click the green < code > button.
--Copy SSH to your clipboard.
--Open up the terminal.
--Change into the directory you wish to clone the app into with the cd command.
--Use the git clone command followed by pasting the copied SSH key.
--Change into the cloned directory with the cd command.
--Install dependencies by typing npm install into the terminal
--Start the webpack by typong npm start into the terminal
--Copy the link it provides that will look like this: http://localhost:8080/
--Paste that into your web browser of choice
--Enjoy!
+1. Click the green < code > button.
+2. Copy SSH to your clipboard.
+3. Open up the terminal.
+4. Change into the directory you wish to clone the app into with the cd command.
+5. Use the git clone command followed by pasting the copied SSH key.
+6. Change into the cloned directory with the cd command.
+7. Install dependencies by typing npm install into the terminal
+8. Start the webpack by typong npm start into the terminal
+9. Copy the link it provides that will look like this: http://localhost:8080/
+10. Paste that into your web browser of choice
+11. Enjoy!
 
-##Preview of App:
+## Preview of App:
 (put gif here)
 
 ## Context:
@@ -38,12 +38,12 @@ https://github.com/JoeyStewart - Joey Stewart
 https://github.com/Jesuitman - Lex Hastings
 
 ## Learning Goals:
--Use object and array prototype methods to perform data manipulation.
--Create a user interface that is easy to use and displays information in a clear way.
--Write DRY, reusable code that follows SRP and trends toward function purity
--Implement a robust testing suite using TDD.
--Make network requests to retrieve data.
--Collaborate productively and professionally as a team. Ensure all team members are able to be heard and contribute throughout the project.
+- Use object and array prototype methods to perform data manipulation.
+- Create a user interface that is easy to use and displays information in a clear way.
+- Write DRY, reusable code that follows SRP and trends toward function purity
+- Implement a robust testing suite using TDD.
+- Make network requests to retrieve data.
+- Collaborate productively and professionally as a team. Ensure all team members are able to be heard and contribute throughout the project.
 
 ## Major Wins:
 ### Joey:

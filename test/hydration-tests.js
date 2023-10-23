@@ -1,5 +1,5 @@
 import { expect } from "chai";
-const { give7DayWaterConsumption, giveAverageWaterConsumption} = require("./hydration-functions.js");
+const { give7DayWaterConsumption, giveAverageWaterConsumption, giveWaterConsumptionforSpecificDay} = require("./hydration-functions.js");
 
 describe("7 Day Water Consumption", () => {
   it("should give the daily water consumption of a particular user for a week starting from the date given", () => {
@@ -171,5 +171,20 @@ describe("Average Total Water Consumption", () => {
     
     expect(averageWaterConsumption1).to.equal(59);
     
+  });
+});
+
+
+describe('Water Consumption for Specific Day', () => {
+  it.skip('should return the correct water consumption for a specific day', () => {
+    const hydrationData = [
+      {
+        "userID": 1,
+        "date": "2023/03/24",
+        "numOunces": 28
+      }
+    ];
+    const result = giveWaterConsumptionforSpecificDay(1, "2023/03/24");
+    expect(result).to.equal(28);
   });
 });

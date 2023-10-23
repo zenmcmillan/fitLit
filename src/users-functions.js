@@ -6,7 +6,5 @@ const getUserFromId = (num, array) => {
 };
 
 const averageStepGoals = (users) => {
-  return (
-    users.reduce((acc, curr) => (acc += curr.dailyStepGoal), 0) / users.length
-  );
+  return users.reduce((acc, curr) => (acc += curr.dailyStepGoal), 0) / users.length
 };

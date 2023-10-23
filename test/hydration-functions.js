@@ -1,4 +1,4 @@
-const giveAverageWaterConsumption = (array, id) => {
+export const giveAverageWaterConsumption = (array, id) => {
   let total = 0;
   const filtered = array.filter((person) => person.userID === id);
   filtered.forEach((element) => {
@@ -7,16 +7,16 @@ const giveAverageWaterConsumption = (array, id) => {
   return Math.trunc(total / filtered.length);
 };
 
-const giveWaterConsumptionforSpecificDay = (id, date, array) => {
+export const giveWaterConsumptionForSpecificDay = (id, date, array) => {
   return array.find(person => person.userID === id && person.date === date).numOunces
 }
 
-function fluidOuncesForDay(hydratedUsers, userId, date) {
+export const fluidOuncesForDay = (hydratedUsers, userId, date) => {
     const entry = hydratedUsers.find(item => item.userID === userId && item.date === date);
     return entry ? entry.numOunces : 0;
 }
 
-const give7DayWaterConsumption = (array, id, theDate) => {
+export const give7DayWaterConsumption = (array, id, theDate) => {
   let arr = [];
 
   const user = array.filter((person) => person.userID === id);
@@ -27,12 +27,4 @@ const give7DayWaterConsumption = (array, id, theDate) => {
     arr.push(user[i]);
   }
   return arr.map((item) => `On ${item.date} you drank ${item.numOunces} oz. of water`);
-};
-
-
-export { 
-  giveAverageWaterConsumption,
-  fluidOuncesForDay,
-  give7DayWaterConsumption ,
-  giveWaterConsumptionforSpecificDay
 };

@@ -1,8 +1,3 @@
-// Your fetch requests will live here!
-import { getUserFromId } from "../test/users-functions";
-
-console.log('I will be a fetch request!')
-
 export const fetchUserData = () => {
   return fetch("https://fitlit-api.herokuapp.com/api/v1/users")
     .then((response) => {

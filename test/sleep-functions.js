@@ -25,13 +25,13 @@ export const averageSleepQuality = (array, id) => {
 };
 
 export const hoursSleptOnDay = (array, id, date) => {
-  const sleptDay =  array.find(person => person.userID === id && person.date === date);
-  return sleptDay.hoursSlept
+  return array.find(person => person.userID === id && person.date === date).hoursSlept;
+
 };
 
 export const sleepQualityDay = (array, id, date) => {
-  const qualityDay = array.find(person => person.userID === id && person.date === date);
-  return qualityDay.sleepQuality
+  return array.find(person => person.userID === id && person.date === date).sleepQuality;
+
 };
 
 export const give7DaySleepHours = (array, id, theDate) => {

@@ -176,7 +176,7 @@ describe("Average Total Water Consumption", () => {
 
 
 describe('Water Consumption for Specific Day', () => {
-  it.skip('should return the correct water consumption for a specific day', () => {
+  it('should return the correct water consumption for a specific day', () => {
     const hydrationData = [
       {
         "userID": 1,
@@ -184,7 +184,7 @@ describe('Water Consumption for Specific Day', () => {
         "numOunces": 28
       }
     ];
-    const result = giveWaterConsumptionforSpecificDay(1, "2023/03/24");
+    const result = giveWaterConsumptionforSpecificDay(1, "2023/03/24", hydrationData);
     expect(result).to.equal(28);
   });
 });

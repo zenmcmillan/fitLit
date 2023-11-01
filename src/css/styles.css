@@ -147,7 +147,7 @@
   font-size: 20px;
 }
 
-.add-activity {
+.add-activity, .buttons {
   width: 200px;
   margin-bottom: 55px;
   font-size: 20px;
@@ -179,3 +179,15 @@
   justify-content: flex-end;
   width: 200px;
 }
+
+.submit-button {
+   width: 200px;
+   margin-top: 15px;
+  margin-bottom: 35px;
+  font-size: 15px;
+  border-radius: 10px;
+  color: white;
+  background-color: green;
+  font-weight: 700;
+  letter-spacing: 2px;
+}`

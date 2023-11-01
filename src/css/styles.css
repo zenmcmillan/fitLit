@@ -147,11 +147,6 @@
   font-size: 20px;
 }
 
-
-/* .add-activity-button-container {
-  display: flex;
-} */
-
 .add-activity {
   width: 200px;
   margin-bottom: 55px;
@@ -166,6 +161,6 @@
 .add-activity:hover {
   cursor: pointer;
   transform:scale(1.3);
-   background-color: blue;
+  background-color: blue;
 }
 

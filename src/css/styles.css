@@ -164,3 +164,18 @@
   background-color: blue;
 }
 
+.hidden {
+  display: none;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-box {
+  display: flex;
+  justify-content: flex-end;
+  width: 200px;
+}

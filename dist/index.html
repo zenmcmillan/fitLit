@@ -47,7 +47,30 @@
             <p class="activity-name">Activity</p>
           </div>
           <span class="material-symbols-outlined">footprint</span>
-          <p class="activity-content"></p>
+          <p class="activity-content">
+      <div class="form-container hidden">    
+      <form class="form hidden">
+          <label for="user id">userID</label>
+          <input class="input-box"type="text" placeholder="user Id goes here...">
+        
+          <label for="date">Date</label>
+          <input class="input-box" type="text" placeholder="YYYY/DD/MM">
+        
+          <label for="number-of-steps">Number of Steps</label>
+          <input class="input-box" type="text" placeholder="number of steps goes here..">
+        
+          <label for="minutes-active">Minutes Active</label>
+          <input class="input-box" ttype="text" placeholder="minutes active goes here..">
+        
+          <label for="flights-of-stairs">Flights of Stairs</label>
+          <input class="input-box" type="text" placeholder="flights of stairs goes here..">
+          <button class="submit-button" >Submit</button>
+      </form>
+    </div> 
+          </p>
+          <div class="add-activity-button-container">
+            <button class="add-activity" >Add Activity</button>
+          </div>
         </section>
         <section class="activity-right-container">
           <p class="step-count-name">Step Count</p>
@@ -56,6 +79,8 @@
           <p class="all-users-average-steps"></p>
        </section>
     </section>
+    
+
   </body>
  <script src="bundle.js"></script>
 </html>

@@ -8,6 +8,14 @@ const allUserAverageSteps = document.querySelector('.all-users-average-steps')
 const hydrationContent = document.querySelector('.hydration-content')
 const sleepContentSection = document.querySelector('.sleep-content')
 const activityContent = document.querySelector('.activity-content')
+const formContainer = document.querySelector('.form-container')
+ const addActivityButton = document.querySelector('.add-activity')
+
+const addActivityData = () => {
+  formContainer.classList.remove('hidden')
+  activityContent.classList.add('hidden')
+  addActivityButton.classList.add('hidden')
+};
 
 const showUserActivity = (userId, data) => {
   const userActivities = data.find((activity) => activity.userID === userId)
@@ -94,5 +102,6 @@ export {
   showActivityInfo,
   showUserActivity,
   showSleepWeek,
-  showLatestSleep
+  showLatestSleep,
+  addActivityData
 };

@@ -1,6 +1,6 @@
 import { addNewActivity } from './domUpdates'
 
-let activityPostURL = 'http://localhost:3001/api/v1/activity'
+const activityPostURL = 'http://localhost:3001/api/v1/activity'
 
 export const fetchUserData = () => {
   return fetch("http://localhost:3001/api/v1/users")
@@ -76,7 +76,7 @@ export const postActivityData = (newActivityData) => { //Activity param placehol
     body: JSON.stringify(newActivityData),
   }) // structure for post request with the URL using a variable established before
   .then((response) => {
-    if (!response.ok) { // if the response fails then it immediately redirects to the error catch using throw
+    if (response.ok && response.status !== 422) { // if the response fails then it immediately redirects to the error catch using throw
       throw new Error('POST request failed');
     }
     return response.json(); // if it succeeds then it returns the response

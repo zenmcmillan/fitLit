@@ -1,9 +1,9 @@
-// import
+// import { addNewActivity } from './domUpdates'
 
 let activityPostURL = 'http://localhost:3001/api/v1/activity'
 
 export const fetchUserData = () => {
-  return fetch("https://fitlit-api.herokuapp.com/api/v1/users")
+  return fetch("http://localhost:3001/api/v1/users")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -19,7 +19,7 @@ export const fetchUserData = () => {
 };
 
 export const fetchHydrationData = () => {
-  return fetch("https://fitlit-api.herokuapp.com/api/v1/hydration")
+  return fetch("http://localhost:3001/api/v1/hydration")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -36,7 +36,7 @@ export const fetchHydrationData = () => {
 
 
 export const fetchSleepData = () => {
-  return fetch("https://fitlit-api.herokuapp.com/api/v1/sleep")
+  return fetch("http://localhost:3001/api/v1/sleep")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -52,7 +52,7 @@ export const fetchSleepData = () => {
 };
 
 export const fetchActivityData = () => {
-  return fetch("https://fitlit-api.herokuapp.com/api/v1/activity")
+  return fetch("http://localhost:3001/api/v1/activity")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -83,7 +83,7 @@ export const postAcitivityData = (newActivityData) => { //Activity param placeho
   })
   .then((responseData) => { // then we move to the second then which posts the new entry to the data in activity
     console.log('POST request successful');
-    addAnimalToPage(responseData);
+    addNewActivity(responseData);
     //uncomment line 84 when we have the function for the post
   })
   .catch((error) => {

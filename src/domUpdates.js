@@ -9,7 +9,8 @@ const hydrationContent = document.querySelector('.hydration-content')
 const sleepContentSection = document.querySelector('.sleep-content')
 const activityContent = document.querySelector('.activity-content')
 const formContainer = document.querySelector('.form-container')
- const addActivityButton = document.querySelector('.add-activity')
+const addActivityButton = document.querySelector('.add-activity')
+const form = document.querySelector('form hidden')
 
 const addActivityData = () => {
   formContainer.classList.remove('hidden')
@@ -94,7 +95,34 @@ const showLatestSleep = (sleepToday, sleepQualityToday) => {
   `
 }
 
-'.submit-button'
+// export const addNewActivity = userActivities => {
+//   activityContent.innerHTML += `
+//       <p>UserID: ${userActivities.userID}</p>
+//       <p>Date: ${userActivities.date}</p>
+//       <p>Number of Steps: ${userActivities.numSteps}</p>
+//       <p>Minutes Active: ${userActivities.minutesActive}</p>
+//       <p>Flights of Stairs: ${userActivities.flightsOfStairs}</p>
+//       `
+// }
+
+// form.addEventListener('.submit-button', (e) => {
+//   e.preventDefault();
+//   const formData = new FormData(e.target);
+//   const newActivityData = {
+//     userID: formData.get('user id'),
+//     date: formData.get('date'),
+//     numSteps: formData.get('number-of-steps'),
+//     minutesActive: formData.get('minutes-active'),
+//     flightsOfStairs: formData.get('flights-of-stairs')
+//   };
+//   if (!newActivityData.date || !newActivityData.numSteps|| !newActivityData.minutesActive || !newActivityData.flightsOfStairs || !newActivityData.userID){
+//     alert("You need to fill all fields before proceeding!")
+//     return
+//   }
+//   addNewActivity(newActivityData);
+//   e.target.reset();
+// });
+
 export {
   showUserInfo,
   showWaterWeek,

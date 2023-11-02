@@ -2,11 +2,16 @@ import './css/styles.css';
 import { showUserInfo,showWaterWeek, showUserSleepInfo, showUserSleepInfo2, showSleepWeek, showActivityInfo, showUserActivity, showLatestSleep, addActivityData } from './domUpdates';
 import { averageStepGoals } from './users-functions';
 import { give7DayWaterConsumption } from './hydration-functions';
-import { fetchUserData, fetchHydrationData, fetchSleepData, fetchActivityData, postAcitivityData} from './apiCalls';
+import { fetchUserData, fetchHydrationData, fetchSleepData, fetchActivityData} from './apiCalls';
 import { averageHoursSleptPerDay, averageSleepQuality, give7DaySleepHours, give7DaySleepQuality, hoursSleptOnDay, sleepQualityDay } from './sleep-functions';
 import { milesWalked, didMeetStepGoal } from './activity-functions';
 
 const addActivityButton = document.querySelector(".add-activity");
+const userIdInput = document.querySelector('.user-id');
+const dateInput = document.querySelector('.date')
+const numberOfStepsInput = document.querySelector('.number-of-steps')
+const minutesActive = document.querySelector('.minutes-active')
+
 
 addActivityButton.addEventListener('click', () => {
   addActivityData()

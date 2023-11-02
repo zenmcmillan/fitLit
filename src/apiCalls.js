@@ -83,7 +83,7 @@ export const postAcitivityData = (newActivityData) => { //Activity param placeho
   })
   .then((responseData) => { // then we move to the second then which posts the new entry to the data in activity
     console.log('POST request successful');
-    // (REPLACE THIS WITH THE PROPER FUNCTION NAME FOR WHAT WE NAME THE POST FUNCTION(responseData)); 
+    addAnimalToPage(responseData);
     //uncomment line 84 when we have the function for the post
   })
   .catch((error) => {

@@ -1,3 +1,5 @@
+import { postActivityData } from './apiCalls.js'
+
 // query selectors
 
 const profileSection = document.querySelector('.profile-content');
@@ -107,22 +109,26 @@ export const addNewActivity = (newActivityData) => {
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  const formData = new FormData(form);
+  const formData = new FormData(e.target);
+  console.log(formData)
   const newActivityData = {
     userID: formData.get('new-user-id'),
     date: formData.get('new-date'),
-    numSteps: formData.get('new-number-of-steps'),
+    flightsOfStairs: formData.get('new-flights-of-stairs'),
     minutesActive: formData.get('new-minutes-active'),
-    flightsOfStairs: formData.get('new-flights-of-stairs')
+    numSteps: formData.get('new-number-of-steps')
   };
+  console.log(newActivityData)
   // if (!newActivityData.date || !newActivityData.numSteps|| !newActivityData.minutesActive || !newActivityData.flightsOfStairs || !newActivityData.userID){
     // alert("You need to fill all fields before proceeding!")
     // return
   // } else {
+  postActivityData(newActivityData)
   addNewActivity(newActivityData);
+  
 // }
 formContainer.classList.add('hidden')
-form.reset();
+e.target.reset();
 });
 
 export {

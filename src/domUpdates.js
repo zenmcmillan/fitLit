@@ -107,23 +107,26 @@ export const addNewActivity = (newActivityData) => {
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  const formData = new FormData(e.target);
+  const formData = new FormData(form);
   const newActivityData = {
-    userID: formData.get('user-id'),
-    date: formData.get('date'),
-    numSteps: formData.get('number-of-steps'),
-    minutesActive: formData.get('minutes-active'),
-    flightsOfStairs: formData.get('flights-of-stairs')
+    userID: formData.get('new-user-id'),
+    date: formData.get('new-date'),
+    numSteps: formData.get('new-number-of-steps'),
+    minutesActive: formData.get('new-minutes-active'),
+    flightsOfStairs: formData.get('new-flights-of-stairs')
   };
-  if (!newActivityData.date || !newActivityData.numSteps|| !newActivityData.minutesActive || !newActivityData.flightsOfStairs || !newActivityData.userID){
-    alert("You need to fill all fields before proceeding!")
-  } else {
+  // if (!newActivityData.date || !newActivityData.numSteps|| !newActivityData.minutesActive || !newActivityData.flightsOfStairs || !newActivityData.userID){
+    // alert("You need to fill all fields before proceeding!")
+    // return
+  // } else {
   addNewActivity(newActivityData);
-  e.target.reset();
-  }
+// }
+formContainer.classList.add('hidden')
+form.reset();
 });
 
 export {
+  // addNewActivity,
   showUserInfo,
   showWaterWeek,
   showUserSleepInfo,

@@ -11,6 +11,14 @@ const activityContent = document.querySelector('.activity-content')
 const formContainer = document.querySelector('.form-container')
 const addActivityButton = document.querySelector('.add-activity')
 
+// const userIdInput = document.querySelector(".user-id");
+// const dateInput = document.querySelector(".date");
+// const numberOfStepsInput = document.querySelector(".number-of-steps");
+// const minutesActive = document.querySelector(".minutes-active");
+
+
+
+
 const addActivityData = () => {
   formContainer.classList.remove('hidden')
   activityContent.classList.add('hidden')

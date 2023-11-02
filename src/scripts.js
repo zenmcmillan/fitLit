@@ -7,11 +7,14 @@ import { averageHoursSleptPerDay, averageSleepQuality, give7DaySleepHours, give7
 import { milesWalked, didMeetStepGoal } from './activity-functions';
 
 const addActivityButton = document.querySelector(".add-activity");
-const userIdInput = document.querySelector('.user-id');
-const dateInput = document.querySelector('.date')
-const numberOfStepsInput = document.querySelector('.number-of-steps')
-const minutesActive = document.querySelector('.minutes-active')
+const form = document.querySelector('form')
 
+form.addEventListener('submit', (event) => {
+  event.preventDefault()
+  const data = new FormData(event.target)
+  const entries = Object.fromEntries(data.entries())
+  console.log(entries)
+})
 
 addActivityButton.addEventListener('click', () => {
   addActivityData()

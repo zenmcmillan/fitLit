@@ -94,6 +94,7 @@ const showLatestSleep = (sleepToday, sleepQualityToday) => {
   `
 }
 
+'.submit-button'
 export {
   showUserInfo,
   showWaterWeek,

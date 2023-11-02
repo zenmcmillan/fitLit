@@ -27,3 +27,27 @@ export const didMeetStepGoal = (array1, array2, id, date) =>{
     return `On ${date} you did not meet your step goal!`
   }
 }
+
+export const addNewActivity = () => {
+  newActivity.innerHTML += `<p>${activityData.date}</p>`;
+}
+
+form.addEventListener('.submit-button', (e) => {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+  const newActivityData = {
+    // userID: current ID,
+    date: formData.get('date'),
+    numSteps: formData.get('numSteps'),
+    minutesActive: formData.get('minutesActive'),
+    flightsOfStairs: formData.get('flightsOfStairs')
+  };
+  if (!newActivityData.date || !newActivityData.numSteps|| !newActivityData.minutesActive || !newActivityData.flightsOfStairs){
+    alert("You need to fill all fields before proceeding!")
+    return
+  }
+  addNewActivity(newActivityData);
+  e.target.reset();
+});
+
+

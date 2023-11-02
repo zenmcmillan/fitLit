@@ -119,14 +119,13 @@ form.addEventListener('submit', (e) => {
     numSteps: formData.get('new-number-of-steps')
   };
   console.log(newActivityData)
-  // if (!newActivityData.date || !newActivityData.numSteps|| !newActivityData.minutesActive || !newActivityData.flightsOfStairs || !newActivityData.userID){
-    // alert("You need to fill all fields before proceeding!")
-    // return
-  // } else {
+  if (!newActivityData.date || !newActivityData.numSteps|| !newActivityData.minutesActive || !newActivityData.flightsOfStairs || !newActivityData.userID){
+    alert("You need to fill all fields before proceeding!")
+    return
+  } else {
   postActivityData(newActivityData)
   addNewActivity(newActivityData);
-  
-// }
+  }
 formContainer.classList.add('hidden')
 e.target.reset();
 });

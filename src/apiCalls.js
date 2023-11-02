@@ -1,3 +1,5 @@
+// import
+
 let activityPostURL = 'http://localhost:3001/api/v1/activity'
 
 export const fetchUserData = () => {
@@ -65,7 +67,7 @@ export const fetchActivityData = () => {
     });
 };
 
-export const postAcitivityData = () => {
+export const postAcitivityData = (newActivityData) => { //Activity param placeholder
   fetch(activityPostURL, {
     method: 'POST',
     headers: {

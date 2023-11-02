@@ -1,4 +1,4 @@
-let activityPostURL = http://localhost:3001/api/v1/activity
+let activityPostURL = 'http://localhost:3001/api/v1/activity'
 
 export const fetchUserData = () => {
   return fetch("https://fitlit-api.herokuapp.com/api/v1/users")

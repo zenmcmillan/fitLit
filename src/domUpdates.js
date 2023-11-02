@@ -10,7 +10,7 @@ const sleepContentSection = document.querySelector('.sleep-content')
 const activityContent = document.querySelector('.activity-content')
 const formContainer = document.querySelector('.form-container')
 const addActivityButton = document.querySelector('.add-activity')
-const form = document.querySelector('form hidden')
+const form = document.querySelector('form.hidden')
 
 const addActivityData = () => {
   formContainer.classList.remove('hidden')
@@ -95,33 +95,33 @@ const showLatestSleep = (sleepToday, sleepQualityToday) => {
   `
 }
 
-// export const addNewActivity = userActivities => {
-//   activityContent.innerHTML += `
-//       <p>UserID: ${userActivities.userID}</p>
-//       <p>Date: ${userActivities.date}</p>
-//       <p>Number of Steps: ${userActivities.numSteps}</p>
-//       <p>Minutes Active: ${userActivities.minutesActive}</p>
-//       <p>Flights of Stairs: ${userActivities.flightsOfStairs}</p>
-//       `
-// }
+export const addNewActivity = (newActivityData) => {
+  activityContent.innerHTML += `
+      <p>UserID: ${newActivityData.userID}</p>
+      <p>Date: ${newActivityData.date}</p>
+      <p>Number of Steps: ${newActivityData.numSteps}</p>
+      <p>Minutes Active: ${newActivityData.minutesActive}</p>
+      <p>Flights of Stairs: ${newActivityData.flightsOfStairs}</p>
+      `
+}
 
-// form.addEventListener('.submit-button', (e) => {
-//   e.preventDefault();
-//   const formData = new FormData(e.target);
-//   const newActivityData = {
-//     userID: formData.get('user id'),
-//     date: formData.get('date'),
-//     numSteps: formData.get('number-of-steps'),
-//     minutesActive: formData.get('minutes-active'),
-//     flightsOfStairs: formData.get('flights-of-stairs')
-//   };
-//   if (!newActivityData.date || !newActivityData.numSteps|| !newActivityData.minutesActive || !newActivityData.flightsOfStairs || !newActivityData.userID){
-//     alert("You need to fill all fields before proceeding!")
-//     return
-//   }
-//   addNewActivity(newActivityData);
-//   e.target.reset();
-// });
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+  const newActivityData = {
+    userID: formData.get('user-id'),
+    date: formData.get('date'),
+    numSteps: formData.get('number-of-steps'),
+    minutesActive: formData.get('minutes-active'),
+    flightsOfStairs: formData.get('flights-of-stairs')
+  };
+  if (!newActivityData.date || !newActivityData.numSteps|| !newActivityData.minutesActive || !newActivityData.flightsOfStairs || !newActivityData.userID){
+    alert("You need to fill all fields before proceeding!")
+  } else {
+  addNewActivity(newActivityData);
+  e.target.reset();
+  }
+});
 
 export {
   showUserInfo,

@@ -27,6 +27,7 @@ const renderPostedData = (data) => {
   <p>Number Of Steps - ${data.numSteps}</p>
   <p>minutes Active - ${data.minutesActive}</p>
   <p>flights Of Stairs - ${data.flightsOfStairs}</p>
+  <button class="add-activity" >Add Activity</button>
   `;
 }
 

@@ -10,13 +10,14 @@ const sleepContentSection = document.querySelector('.sleep-content')
 const activityContent = document.querySelector('.activity-content')
 const formContainer = document.querySelector('.form-container')
 const addActivityButton = document.querySelector('.add-activity')
-
+const inputBox = document.querySelectorAll('.input-box')
 
 
 const renderPostedData = (data) => {
   formContainer.classList.add('hidden')
   activityContent.classList.remove('hidden')
   addActivityButton.classList.remove('hidden')
+  inputBox.forEach(input => input.value = '')
 
   activityContent.innerHTML = '';
 

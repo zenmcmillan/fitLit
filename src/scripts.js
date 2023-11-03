@@ -2,19 +2,41 @@ import './css/styles.css';
 import { showUserInfo,showWaterWeek, showUserSleepInfo, showUserSleepInfo2, showSleepWeek, showActivityInfo, showUserActivity, showLatestSleep, addActivityData } from './domUpdates';
 import { averageStepGoals } from './users-functions';
 import { give7DayWaterConsumption } from './hydration-functions';
-import { fetchUserData, fetchHydrationData, fetchSleepData, fetchActivityData} from './apiCalls';
+import { fetchUserData, fetchHydrationData, fetchSleepData, fetchActivityData, postActivityData} from './apiCalls';
 import { averageHoursSleptPerDay, averageSleepQuality, give7DaySleepHours, give7DaySleepQuality, hoursSleptOnDay, sleepQualityDay } from './sleep-functions';
 import { milesWalked, didMeetStepGoal } from './activity-functions';
 
 const addActivityButton = document.querySelector(".add-activity");
 const form = document.querySelector('form')
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault()
-  const data = new FormData(event.target)
-  const entries = Object.fromEntries(data.entries())
-  console.log(entries)
-})
+// form.addEventListener('submit', (event) => {
+//   event.preventDefault()
+//   const data = new FormData(event.target)
+//   const entries = Object.fromEntries(data.entries())
+//   console.log(entries)
+//   postActivityData(entries)
+// })
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(event.target);
+
+  const data = {};
+
+  data.userID = parseInt(formData.get("userID"));
+  data.date = formData.get("date"); 
+  data.numSteps = parseInt(formData.get("numSteps")); 
+  data.minutesActive = parseInt(formData.get("minutesActive")); 
+  data.flightsOfStairs = parseInt(formData.get("flightsOfStairs")); 
+
+  // Log the data for verification
+  console.log(data);
+
+  // Send the data using the postActivityData function
+  postActivityData(data);
+});
+
 
 addActivityButton.addEventListener('click', () => {
   addActivityData()

@@ -1,4 +1,4 @@
-let activityPostURL = 'http://localhost:3001/api/v1/activity'
+// let activityPostURL = 'http://localhost:3001/api/v1/activity'
 
 export const fetchUserData = () => {
   return fetch("https://fitlit-api.herokuapp.com/api/v1/users")
@@ -65,7 +65,33 @@ export const fetchActivityData = () => {
     });
 };
 
-// export const postActivityData = () => {
-  
-// };
+export const postActivityData = (activityObj) => {
+  const activityPostURL = "http://localhost:3001/api/v1/activity";
+  const options = {
+    method: "POST",
+    body: JSON.stringify(activityObj),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  fetch(activityPostURL, options)
+    .then((response) => {
+      if (!response.ok && response.status !== 422) {
+        // Check if the response status code indicates an error
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json(); // Parse the response body as JSON
+    })
+    .then((data) => {
+      // Handle the successful response here
+      console.log("New activity data:", data);
+    })
+    .catch((error) => {
+      // Handle any errors that occurred during the request
+      console.error("Error:", error);
+    });
+};
+
+
 

@@ -11,15 +11,13 @@ const activityContent = document.querySelector('.activity-content')
 const formContainer = document.querySelector('.form-container')
 const addActivityButton = document.querySelector('.add-activity')
 
-// const userIdInput = document.querySelector(".user-id");
-// const dateInput = document.querySelector(".date");
-// const numberOfStepsInput = document.querySelector(".number-of-steps");
-// const minutesActive = document.querySelector(".minutes-active");
+
 
 const renderPostedData = (data) => {
   formContainer.classList.add('hidden')
   activityContent.classList.remove('hidden')
-  
+  addActivityButton.classList.remove('hidden')
+
   activityContent.innerHTML = '';
 
   activityContent.innerHTML += `
@@ -27,7 +25,6 @@ const renderPostedData = (data) => {
   <p>Number Of Steps - ${data.numSteps}</p>
   <p>minutes Active - ${data.minutesActive}</p>
   <p>flights Of Stairs - ${data.flightsOfStairs}</p>
-  <button class="add-activity" >Add Activity</button>
   `;
 }
 

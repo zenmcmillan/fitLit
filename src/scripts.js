@@ -9,6 +9,7 @@ import { milesWalked, didMeetStepGoal } from './activity-functions';
 const addActivityButton = document.querySelector(".add-activity");
 const form = document.querySelector('form')
 
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 

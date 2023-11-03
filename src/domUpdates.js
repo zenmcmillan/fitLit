@@ -16,7 +16,19 @@ const addActivityButton = document.querySelector('.add-activity')
 // const numberOfStepsInput = document.querySelector(".number-of-steps");
 // const minutesActive = document.querySelector(".minutes-active");
 
+const renderPostedData = (data) => {
+  formContainer.classList.add('hidden')
+  activityContent.classList.remove('hidden')
+  
+  activityContent.innerHTML = '';
 
+  activityContent.innerHTML += `
+  <p>Date - ${data.date}</p>
+  <p>Number Of Steps - ${data.numSteps}</p>
+  <p>minutes Active - ${data.minutesActive}</p>
+  <p>flights Of Stairs - ${data.flightsOfStairs}</p>
+  `;
+}
 
 
 const addActivityData = () => {
@@ -111,5 +123,6 @@ export {
   showUserActivity,
   showSleepWeek,
   showLatestSleep,
-  addActivityData
+  addActivityData,
+  renderPostedData,
 };

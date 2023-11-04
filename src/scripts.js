@@ -34,7 +34,6 @@ checkBox1.addEventListener('click', () => {
   showMotivationLevelResponse()
 })
 
-
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -48,6 +47,11 @@ form.addEventListener("submit", (event) => {
   data.minutesActive = parseInt(formData.get("minutesActive")); 
   data.flightsOfStairs = parseInt(formData.get("flightsOfStairs")); 
 
+
+  if(!data.userID || !data.date || !data.numSteps || !data.minutesActive || !data.flightsOfStairs){
+    alert("You must fill all infomation fields before submitting!")
+    formData.reset()
+  }
   console.log(data);
 
   postActivityData(data);
@@ -141,8 +145,6 @@ const grapLatestSleep = (data) => {
   let sleepQualityToday = sleepQualityDay(data, index, '2023/07/01')
   showLatestSleep(sleepToday, sleepQualityToday)
 }
-
-
 
 
 

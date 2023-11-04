@@ -27,3 +27,7 @@ export const didMeetStepGoal = (array1, array2, id, date) =>{
     return `On ${date} you did not meet your step goal!`
   }
 }
+
+
+
+

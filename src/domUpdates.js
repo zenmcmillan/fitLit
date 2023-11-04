@@ -13,13 +13,11 @@ const addActivityButton = document.querySelector('.add-activity')
 const inputBox = document.querySelectorAll('.input-box')
 const checkBoxContainer = document.querySelector('.checkbox-container')
 const motivationLevel = document.querySelector('.motivation-level')
-const checkBox1 = document.querySelector('.checkbox-1')
+const checkBox1 = document.querySelector(".checkbox-1");
 const checkBox2 = document.querySelector(".checkbox-2");
 const checkBox3 = document.querySelector(".checkbox-3");
 const checkBox4 = document.querySelector(".checkbox-4");
 const checkBox5 = document.querySelector(".checkbox-5");
-
-
 
 const showMotivationLevelResponse = () => {
    checkBoxContainer.classList.add("hidden");
@@ -51,8 +49,8 @@ const renderPostedData = (data) => {
   activityContent.innerHTML += `
   <p>Date - ${data.date}</p>
   <p>Number Of Steps - ${data.numSteps}</p>
-  <p>minutes Active - ${data.minutesActive}</p>
-  <p>flights Of Stairs - ${data.flightsOfStairs}</p>
+  <p>Minutes Active - ${data.minutesActive}</p>
+  <p>Flights Of Stairs - ${data.flightsOfStairs}</p>
   `;
 }
 
@@ -74,7 +72,6 @@ const showUserActivity = (userId, data) => {
 
 const showActivityInfo = (data) => {
 activityContent.innerHTML += `<p>${data}</p>`
-
 }
 
 const showUserSleepInfo = (data) => {
@@ -86,9 +83,7 @@ const showUserSleepInfo2 = (data) => {
 }
 
 const showWaterWeek = (waterWeek) =>{
-
   waterWeek.forEach(week => {
-
     hydrationContent.innerHTML += `<p>${week}</p>`
   })
   

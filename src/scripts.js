@@ -47,6 +47,7 @@ form.addEventListener("submit", (event) => {
   data.minutesActive = parseInt(formData.get("minutesActive")); 
   data.flightsOfStairs = parseInt(formData.get("flightsOfStairs")); 
 
+
   if(!data.userID || !data.date || !data.numSteps || !data.minutesActive || !data.flightsOfStairs){
     alert("You must fill all infomation fields before submitting!")
     formData.reset()

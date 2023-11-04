@@ -78,6 +78,7 @@ export const postActivityData = (activityObj) => {
   fetch(activityPostURL, options)
     .then((response) => {
       if (!response.ok && response.status !== 422) {
+
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       return response.json();

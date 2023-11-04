@@ -49,7 +49,7 @@ form.addEventListener("submit", (event) => {
 
 
   if(!data.userID || !data.date || !data.numSteps || !data.minutesActive || !data.flightsOfStairs){
-    alert("You must fill all infomation fields before submitting!")
+    alert("You must fill all infomation fields correctly before submitting!")
     formData.reset()
   }
   console.log(data);

@@ -14,6 +14,8 @@ const checkBox3 = document.querySelector(".checkbox-3");
 const checkBox4 = document.querySelector(".checkbox-4");
 const checkBox5 = document.querySelector(".checkbox-5");
 
+let index; 
+
 checkBox5.addEventListener("click", () => {
   showMotivationLevelResponse();
 });
@@ -34,6 +36,8 @@ checkBox1.addEventListener('click', () => {
   showMotivationLevelResponse()
 })
 
+
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -47,40 +51,18 @@ form.addEventListener("submit", (event) => {
   data.minutesActive = parseInt(formData.get("minutesActive")); 
   data.flightsOfStairs = parseInt(formData.get("flightsOfStairs")); 
 
-
   if(!data.userID || !data.date || !data.numSteps || !data.minutesActive || !data.flightsOfStairs){
     alert("You must fill all infomation fields correctly before submitting!")
     formData.reset()
   }
-  console.log(data);
-
+  
   postActivityData(data);
   renderPostedData(data)
 });
 
-
 addActivityButton.addEventListener('click', () => {
   addActivityData()
 })
-
-const populateDOM = (data) => {
-  renderUserInfo(data)
-};
-
-const populateDOM2 = (data) => {
-  grabWaterWeek(data)
-};
-
-const populateDOM3 = (data) => {
-  grabSleepWeek(data)
-  renderSleepInfo(data)
-  grapLatestSleep(data)
-};
-  
-const populateDOM4 = (data, data1) => {
-  renderActivityInfo(data, data1)
-   renderActivityData(data)
-};
 
 window.addEventListener('load', () => {
   Promise.all([fetchUserData(), fetchHydrationData(), fetchSleepData(), fetchActivityData()])
@@ -99,7 +81,26 @@ window.addEventListener('load', () => {
     });
 });
 
-let index 
+
+
+const populateDOM = (data) => {
+  renderUserInfo(data);
+};
+
+const populateDOM2 = (data) => {
+  grabWaterWeek(data);
+};
+
+const populateDOM3 = (data) => {
+  grabSleepWeek(data);
+  renderSleepInfo(data);
+  grapLatestSleep(data);
+};
+
+const populateDOM4 = (data, data1) => {
+  renderActivityInfo(data, data1);
+  renderActivityData(data);
+};
 
 const getRandomIndex = (array) => {
     return Math.floor(Math.random() * array.length);

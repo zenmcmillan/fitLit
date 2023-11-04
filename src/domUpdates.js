@@ -9,7 +9,26 @@ const hydrationContent = document.querySelector('.hydration-content')
 const sleepContentSection = document.querySelector('.sleep-content')
 const activityContent = document.querySelector('.activity-content')
 const formContainer = document.querySelector('.form-container')
- const addActivityButton = document.querySelector('.add-activity')
+const addActivityButton = document.querySelector('.add-activity')
+const inputBox = document.querySelectorAll('.input-box')
+
+
+const renderPostedData = (data) => {
+  formContainer.classList.add('hidden')
+  activityContent.classList.remove('hidden')
+  addActivityButton.classList.remove('hidden')
+  inputBox.forEach(input => input.value = '')
+
+  activityContent.innerHTML = '';
+
+  activityContent.innerHTML += `
+  <p>Date - ${data.date}</p>
+  <p>Number Of Steps - ${data.numSteps}</p>
+  <p>minutes Active - ${data.minutesActive}</p>
+  <p>flights Of Stairs - ${data.flightsOfStairs}</p>
+  `;
+}
+
 
 const addActivityData = () => {
   formContainer.classList.remove('hidden')
@@ -103,5 +122,6 @@ export {
   showUserActivity,
   showSleepWeek,
   showLatestSleep,
-  addActivityData
+  addActivityData,
+  renderPostedData,
 };

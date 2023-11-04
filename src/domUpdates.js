@@ -11,7 +11,35 @@ const activityContent = document.querySelector('.activity-content')
 const formContainer = document.querySelector('.form-container')
 const addActivityButton = document.querySelector('.add-activity')
 const inputBox = document.querySelectorAll('.input-box')
+const checkBoxes = document.querySelectorAll('.checkbox')
+const checkBoxContainer = document.querySelector('.checkbox-container')
+const motivationLevel = document.querySelector('.motivation-level')
+const checkBox1 = document.querySelector('.checkbox-1')
+const checkBox2 = document.querySelector(".checkbox-2");
+const checkBox3 = document.querySelector(".checkbox-3");
+const checkBox4 = document.querySelector(".checkbox-4");
+const checkBox5 = document.querySelector(".checkbox-5");
 
+
+
+const showMotivationLevelResponse = () => {
+   checkBoxContainer.classList.add("hidden");
+  if (checkBox1.checked) {
+    motivationLevel.innerHTML += `<p>1 - You're motivation is low today!</p>`
+  }
+  if (checkBox2.checked) {
+    motivationLevel.innerHTML += `<p>2 - You're lacking motivation today!</p>`;
+  }
+  if (checkBox3.checked) {
+    motivationLevel.innerHTML += `<p>3 - You're motivated today!</p>`;
+  }
+  if (checkBox4.checked) {
+    motivationLevel.innerHTML += `<p>4 - You're highly motivated today!</p>`;
+  }
+  if (checkBox5.checked) {
+    motivationLevel.innerHTML += `<p>5 - You're extremely motivated today!</p>`;
+  }
+}
 
 const renderPostedData = (data) => {
   formContainer.classList.add('hidden')
@@ -127,6 +155,7 @@ export {
   showLatestSleep,
   addActivityData,
   renderPostedData,
+  showMotivationLevelResponse,
 };
 
 const getRandomIndex = (array) => {

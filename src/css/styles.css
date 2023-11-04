@@ -36,7 +36,7 @@
   text-align: center;
   line-height: .5;
 }
-.profile-name, .sleep-name, .activity-name, .step-count-name, .hydration-name {
+.profile-name, .sleep-name, .activity-name, .step-count-name, .hydration-name, .motivation-name {
   font-weight: 700;
   font-size: 25px;
 }
@@ -193,3 +193,12 @@
   font-weight: 700;
   letter-spacing: 2px;
 }
+
+.motivation-name, .motivation-second-title  {
+  text-align: center;
+}
+
+.checkbox-label {
+  margin-left: 15px;
+}
+

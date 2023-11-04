@@ -13,11 +13,7 @@ const addActivityButton = document.querySelector('.add-activity')
 const inputBox = document.querySelectorAll('.input-box')
 const checkBoxContainer = document.querySelector('.checkbox-container')
 const motivationLevel = document.querySelector('.motivation-level')
-const checkBox1 = document.querySelector('.checkbox-1')
-const checkBox2 = document.querySelector(".checkbox-2");
-const checkBox3 = document.querySelector(".checkbox-3");
-const checkBox4 = document.querySelector(".checkbox-4");
-const checkBox5 = document.querySelector(".checkbox-5");
+
 
 
 

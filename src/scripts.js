@@ -8,6 +8,31 @@ import { milesWalked, didMeetStepGoal } from './activity-functions';
 
 const addActivityButton = document.querySelector(".add-activity");
 const form = document.querySelector('form')
+const checkBox1 = document.querySelector(".checkbox-1");
+const checkBox2 = document.querySelector(".checkbox-2");
+const checkBox3 = document.querySelector(".checkbox-3");
+const checkBox4 = document.querySelector(".checkbox-4");
+const checkBox5 = document.querySelector(".checkbox-5");
+
+checkBox5.addEventListener("click", () => {
+  showMotivationLevelResponse();
+});
+
+checkBox4.addEventListener("click", () => {
+  showMotivationLevelResponse();
+});
+
+checkBox3.addEventListener("click", () => {
+  showMotivationLevelResponse();
+});
+
+checkBox2.addEventListener("click", () => {
+  showMotivationLevelResponse();
+});
+
+checkBox1.addEventListener('click', () => {
+  showMotivationLevelResponse()
+})
 
 
 form.addEventListener("submit", (event) => {

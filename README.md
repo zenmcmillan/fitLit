@@ -30,7 +30,7 @@ The project also provides an extension option for building a robust testing suit
 
 ## Preview of App:
 
-![Project Preview]![Fit Lit](https://github.com/zenmcmillan/fitLit/assets/140363136/6e642d4f-80ad-4aa4-8477-529eca29580c)
+![Fit Lit](https://github.com/zenmcmillan/fitLit/assets/140363136/6e642d4f-80ad-4aa4-8477-529eca29580c)
 
 
 ## Context:

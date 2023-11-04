@@ -30,7 +30,8 @@ The project also provides an extension option for building a robust testing suit
 
 ## Preview of App:
 
-![Project Preview](Project-Sample-1.gif)
+![Project Preview]![Fit Lit](https://github.com/zenmcmillan/fitLit/assets/140363136/6e642d4f-80ad-4aa4-8477-529eca29580c)
+
 
 ## Context:
 This was the first group project in Mod 2 that we had to assemble. We used webpacks as well as fetch requests to store variables for future use and that allowed us to populate every field of this Fitness Tracker. We had 10 days to complete the project spent about 90 hours cumulatively working togeher collaboratively. Part of the difficulty of the project came from learning new concepts such as the fetch requests and then having to utilize them in the same day. Even in spite of this, the project was completed several days in advance of the project deadline allowing time for bug fixes. 

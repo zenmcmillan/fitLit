@@ -33,6 +33,8 @@
 .welcome-sign {
   margin-top: -50px;
   font-size: 30px;
+  text-align: center;
+  line-height: .5;
 }
 .profile-name, .sleep-name, .activity-name, .step-count-name, .hydration-name {
   font-weight: 700;

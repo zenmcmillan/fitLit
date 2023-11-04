@@ -71,7 +71,10 @@ const showWaterWeek = (waterWeek) =>{
 const showUserInfo = (userId, array, averages) => {
   let user = array[userId - 1];
 
+  let randomMotivation = getRandomIndex(affirmations)
+
   welcome.innerHTML += `<p>Welcome ${user.name}</p>`;
+  welcome.innerHTML += `<p>${affirmations[randomMotivation]}</p>`
   
   userAverageSteps.innerHTML +=`<p>Your average step count - ${user.dailyStepGoal}</p>`
 
@@ -125,3 +128,23 @@ export {
   addActivityData,
   renderPostedData,
 };
+
+const getRandomIndex = (array) => {
+  return Math.floor(Math.random() * array.length);
+};
+
+const affirmations = [
+  "You forgive yourself and set yourself free.",
+  "YOU believe you can be all that you want to be.",
+  "You are in the process of becoming the best version of yourself.",
+  "You have the freedom & power to create the life you desire.",
+  "You must choose to be kind to yourself and love yourself unconditionally.",
+  "Your possibilities are endless.",
+  "You are worthy of your dreams.",
+  "You are enough.",
+  "You deserve to be healthy and feel good.",
+  "You are full of energy and vitality, your mind is calm and peaceful.",
+  "Every day you are getting healthier and stronger.",
+  "You honor your body by trusting the signals that it sends you.",
+  "You manifest perfect health by making smart choices."
+];

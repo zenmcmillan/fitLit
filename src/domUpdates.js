@@ -10,7 +10,53 @@ const sleepContentSection = document.querySelector('.sleep-content')
 const activityContent = document.querySelector('.activity-content')
 const formContainer = document.querySelector('.form-container')
 const addActivityButton = document.querySelector('.add-activity')
-const form = document.querySelector('form.hidden')
+const inputBox = document.querySelectorAll('.input-box')
+const checkBoxes = document.querySelectorAll('.checkbox')
+const checkBoxContainer = document.querySelector('.checkbox-container')
+const motivationLevel = document.querySelector('.motivation-level')
+const checkBox1 = document.querySelector('.checkbox-1')
+const checkBox2 = document.querySelector(".checkbox-2");
+const checkBox3 = document.querySelector(".checkbox-3");
+const checkBox4 = document.querySelector(".checkbox-4");
+const checkBox5 = document.querySelector(".checkbox-5");
+
+
+
+const showMotivationLevelResponse = () => {
+   checkBoxContainer.classList.add("hidden");
+  if (checkBox1.checked) {
+    motivationLevel.innerHTML += `<p>1 - You're motivation is low today!</p>`
+  }
+  if (checkBox2.checked) {
+    motivationLevel.innerHTML += `<p>2 - You're lacking motivation today!</p>`;
+  }
+  if (checkBox3.checked) {
+    motivationLevel.innerHTML += `<p>3 - You're motivated today!</p>`;
+  }
+  if (checkBox4.checked) {
+    motivationLevel.innerHTML += `<p>4 - You're highly motivated today!</p>`;
+  }
+  if (checkBox5.checked) {
+    motivationLevel.innerHTML += `<p>5 - You're extremely motivated today!</p>`;
+  }
+}
+
+const renderPostedData = (data) => {
+  formContainer.classList.add('hidden')
+  activityContent.classList.remove('hidden')
+  addActivityButton.classList.remove('hidden')
+  inputBox.forEach(input => input.value = '')
+
+  activityContent.innerHTML = '';
+
+  activityContent.innerHTML += `
+  <p>Date - ${data.date}</p>
+  <p>Number Of Steps - ${data.numSteps}</p>
+  <p>minutes Active - ${data.minutesActive}</p>
+  <p>flights Of Stairs - ${data.flightsOfStairs}</p>
+  `;
+}
+
 
 const addActivityData = () => {
   formContainer.classList.remove('hidden')
@@ -53,7 +99,10 @@ const showWaterWeek = (waterWeek) =>{
 const showUserInfo = (userId, array, averages) => {
   let user = array[userId - 1];
 
+  let randomMotivation = getRandomIndex(affirmations)
+
   welcome.innerHTML += `<p>Welcome ${user.name}</p>`;
+  welcome.innerHTML += `<p>${affirmations[randomMotivation]}</p>`
   
   userAverageSteps.innerHTML +=`<p>Your average step count - ${user.dailyStepGoal}</p>`
 
@@ -95,38 +144,7 @@ const showLatestSleep = (sleepToday, sleepQualityToday) => {
   `
 }
 
-export const addNewActivity = (newActivityData) => {
-  activityContent.innerHTML += `
-      <p>UserID: ${newActivityData.userID}</p>
-      <p>Date: ${newActivityData.date}</p>
-      <p>Number of Steps: ${newActivityData.numSteps}</p>
-      <p>Minutes Active: ${newActivityData.minutesActive}</p>
-      <p>Flights of Stairs: ${newActivityData.flightsOfStairs}</p>
-      `
-}
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const formData = new FormData(form);
-  const newActivityData = {
-    userID: formData.get('new-user-id'),
-    date: formData.get('new-date'),
-    numSteps: formData.get('new-number-of-steps'),
-    minutesActive: formData.get('new-minutes-active'),
-    flightsOfStairs: formData.get('new-flights-of-stairs')
-  };
-  // if (!newActivityData.date || !newActivityData.numSteps|| !newActivityData.minutesActive || !newActivityData.flightsOfStairs || !newActivityData.userID){
-    // alert("You need to fill all fields before proceeding!")
-    // return
-  // } else {
-  addNewActivity(newActivityData);
-// }
-formContainer.classList.add('hidden')
-form.reset();
-});
-
 export {
-  // addNewActivity,
   showUserInfo,
   showWaterWeek,
   showUserSleepInfo,
@@ -135,5 +153,27 @@ export {
   showUserActivity,
   showSleepWeek,
   showLatestSleep,
-  addActivityData
+  addActivityData,
+  renderPostedData,
+  showMotivationLevelResponse,
 };
+
+const getRandomIndex = (array) => {
+  return Math.floor(Math.random() * array.length);
+};
+
+const affirmations = [
+  "You forgive yourself and set yourself free.",
+  "You can be all that you want to be.",
+  "You are in the process of becoming the best version of yourself.",
+  "You have the freedom & power to create the life you desire.",
+  "You must choose to be kind to yourself and love yourself unconditionally.",
+  "Your possibilities are endless.",
+  "You are worthy of your dreams.",
+  "You are enough.",
+  "You deserve to be healthy and feel good.",
+  "You are full of energy and vitality, your mind is calm and peaceful.",
+  "Every day you are getting healthier and stronger.",
+  "You honor your body by trusting the signals that it sends you.",
+  "You manifest perfect health by making smart choices."
+];

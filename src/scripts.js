@@ -1,12 +1,59 @@
 import './css/styles.css';
-import { showUserInfo,showWaterWeek, showUserSleepInfo, showUserSleepInfo2, showSleepWeek, showActivityInfo, showUserActivity, showLatestSleep, addActivityData } from './domUpdates';
+import { showUserInfo,showWaterWeek, showUserSleepInfo, showUserSleepInfo2, showSleepWeek, showActivityInfo, showUserActivity, showLatestSleep, addActivityData, renderPostedData, showMotivationLevelResponse} from './domUpdates';
 import { averageStepGoals } from './users-functions';
 import { give7DayWaterConsumption } from './hydration-functions';
-import { fetchUserData, fetchHydrationData, fetchSleepData, fetchActivityData, postAcitivityData} from './apiCalls';
+import { fetchUserData, fetchHydrationData, fetchSleepData, fetchActivityData, postActivityData} from './apiCalls';
 import { averageHoursSleptPerDay, averageSleepQuality, give7DaySleepHours, give7DaySleepQuality, hoursSleptOnDay, sleepQualityDay } from './sleep-functions';
 import { milesWalked, didMeetStepGoal } from './activity-functions';
 
 const addActivityButton = document.querySelector(".add-activity");
+const form = document.querySelector('form')
+const checkBox1 = document.querySelector(".checkbox-1");
+const checkBox2 = document.querySelector(".checkbox-2");
+const checkBox3 = document.querySelector(".checkbox-3");
+const checkBox4 = document.querySelector(".checkbox-4");
+const checkBox5 = document.querySelector(".checkbox-5");
+
+checkBox5.addEventListener("click", () => {
+  showMotivationLevelResponse();
+});
+
+checkBox4.addEventListener("click", () => {
+  showMotivationLevelResponse();
+});
+
+checkBox3.addEventListener("click", () => {
+  showMotivationLevelResponse();
+});
+
+checkBox2.addEventListener("click", () => {
+  showMotivationLevelResponse();
+});
+
+checkBox1.addEventListener('click', () => {
+  showMotivationLevelResponse()
+})
+
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(event.target);
+
+  const data = {};
+
+  data.userID = parseInt(formData.get("userID"));
+  data.date = formData.get("date"); 
+  data.numSteps = parseInt(formData.get("numSteps")); 
+  data.minutesActive = parseInt(formData.get("minutesActive")); 
+  data.flightsOfStairs = parseInt(formData.get("flightsOfStairs")); 
+
+  console.log(data);
+
+  postActivityData(data);
+  renderPostedData(data)
+});
+
 
 addActivityButton.addEventListener('click', () => {
   addActivityData()

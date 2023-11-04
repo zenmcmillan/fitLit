@@ -1,5 +1,5 @@
 import './css/styles.css';
-import { showUserInfo,showWaterWeek, showUserSleepInfo, showUserSleepInfo2, showSleepWeek, showActivityInfo, showUserActivity, showLatestSleep, addActivityData, renderPostedData } from './domUpdates';
+import { showUserInfo,showWaterWeek, showUserSleepInfo, showUserSleepInfo2, showSleepWeek, showActivityInfo, showUserActivity, showLatestSleep, addActivityData, renderPostedData, showMotivationLevelResponse} from './domUpdates';
 import { averageStepGoals } from './users-functions';
 import { give7DayWaterConsumption } from './hydration-functions';
 import { fetchUserData, fetchHydrationData, fetchSleepData, fetchActivityData, postActivityData} from './apiCalls';

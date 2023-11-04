@@ -34,7 +34,6 @@ checkBox1.addEventListener('click', () => {
   showMotivationLevelResponse()
 })
 
-
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -145,8 +144,6 @@ const grapLatestSleep = (data) => {
   let sleepQualityToday = sleepQualityDay(data, index, '2023/07/01')
   showLatestSleep(sleepToday, sleepQualityToday)
 }
-
-
 
 
 

@@ -148,4 +148,4 @@ A major challenge was trying to get the submitted data to display on the page. I
 The biggest challenge I had personally was doing the POST request since I didn't have much experience doing it. A big challenge was making sure that the data was in the correct format and that data could not be sent to the server if it was in the wrong format.
 
 ### Lex:
-The biggest challenge was in learnign to write the POST request because it was the major thing that was completely new to me on this iteration of the project. I already knew how to do the radio buttons, the random message display, and the use of beforeEach wasnt a big deal to me, but the POST request was brand new and it took me a bit of work to overcome that..
+The biggest challenge was in learnign to write the POST request because it was the major thing that was completely new to me on this iteration of the project. I already knew how to do the radio buttons, the random message display, and the use of beforeEach wasnt a big deal to me, but the POST request was brand new and it took me a bit of work to overcome that.

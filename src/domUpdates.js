@@ -164,7 +164,7 @@ const getRandomIndex = (array) => {
 
 const affirmations = [
   "You forgive yourself and set yourself free.",
-  "YOU believe you can be all that you want to be.",
+  "You can be all that you want to be.",
   "You are in the process of becoming the best version of yourself.",
   "You have the freedom & power to create the life you desire.",
   "You must choose to be kind to yourself and love yourself unconditionally.",

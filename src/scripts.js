@@ -1,5 +1,5 @@
 import './css/styles.css';
-import { showUserInfo,showWaterWeek, showUserSleepInfo, showUserSleepInfo2, showSleepWeek, showActivityInfo, showUserActivity, showLatestSleep, addActivityData, renderPostedData, showMotivationLevelResponse} from './domUpdates';
+import { showUserInfo,showWaterWeek, showUserSleepInfo, showUserSleepInfo2, showSleepWeek, showActivityInfo, showUserActivity, showLatestSleep, addActivityData, renderPostedData, showMotivationLevelResponse, profileId} from './domUpdates';
 import { averageStepGoals } from './users-functions';
 import { give7DayWaterConsumption } from './hydration-functions';
 import { fetchUserData, fetchHydrationData, fetchSleepData, fetchActivityData, postActivityData} from './apiCalls';
@@ -20,12 +20,12 @@ const numStepsInput = document.querySelector('.num-steps-input')
 const minutesActiveInput = document.querySelector('.minutes-active-input')
 const stairsInput = document.querySelector('.stairs-input')
 
+
 let index; 
 
 
 submitButton.addEventListener("click", () => {
   
-
   let obj = {
     userID: parseInt(userIdInput.value), 
     date: dateInput.value, 
@@ -34,21 +34,20 @@ submitButton.addEventListener("click", () => {
      flightsOfStairs: parseInt(stairsInput.value)
     }
 
-  if (
+  if (profileId !== parseInt(userIdInput.value)) {
+    alert("Enter the correct User ID")
+  } else if (
     !parseInt(userIdInput.value) || 
     !dateInput.value || 
     !parseInt(numStepsInput.value) || 
     !parseInt(minutesActiveInput.value) ||
-    !parseInt(stairsInput.value))
-     {
-    alert("Ensure that information is entered correctly");
+    !parseInt(stairsInput.value)
+  ) {
+    alert("You must fill all information fields correctly before submitting");
   } else {
     renderPostedData(obj);
-    console.log(obj);
     postActivityData(obj);
   }
-  
-   
 });
 
 

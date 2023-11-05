@@ -19,6 +19,8 @@ const checkBox3 = document.querySelector(".checkbox-3");
 const checkBox4 = document.querySelector(".checkbox-4");
 const checkBox5 = document.querySelector(".checkbox-5");
 
+let profileId = null
+
 const showMotivationLevelResponse = () => {
    checkBoxContainer.classList.add("hidden");
   if (checkBox1.checked) {
@@ -91,6 +93,7 @@ const showWaterWeek = (waterWeek) =>{
 }
 
 const showUserInfo = (userId, array, averages) => {
+  
   let user = array[userId - 1];
 
   let randomMotivation = getRandomIndex(affirmations)
@@ -103,15 +106,15 @@ const showUserInfo = (userId, array, averages) => {
   allUserAverageSteps.innerHTML += `<p>The average for everyone - ${averages}</p>`;
   
   profileSection.innerHTML += `
-    
+
      <p>Id Number: ${user.id}</p>
      <p>Name: ${user.name}</p>
-     <p>Address: ${user.address}</p>
      <p>Email: ${user.email}</p>
      <p>Stride Length - ${user.strideLength}</p>
      <p>Daily Step Goal - ${user.dailyStepGoal}</p>
      <p>FRIENDS</p>
     `;
+   
   const usersFriends = array[userId - 1].friends;
 
    usersFriends.forEach((friend) => {
@@ -120,6 +123,7 @@ const showUserInfo = (userId, array, averages) => {
     <p>${array[friend - 1].name}</p>
     `;
   });
+   profileId = user.id;
 };
 
 const showSleepWeek = (sleepWeekHours) => {
@@ -150,6 +154,7 @@ export {
   addActivityData,
   renderPostedData,
   showMotivationLevelResponse,
+  profileId,
 };
 
 const getRandomIndex = (array) => {

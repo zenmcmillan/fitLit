@@ -34,16 +34,18 @@ submitButton.addEventListener("click", () => {
      flightsOfStairs: parseInt(stairsInput.value)
     }
 
-  if (!parseInt(userIdInput.value) || 
-  !dateInput.value || 
-  !parseInt(numStepsInput.value) || 
-  !parseInt(minutesActiveInput.value) ||
-  !parseInt(stairsInput.value)) {
+  if (
+    !parseInt(userIdInput.value) || 
+    !dateInput.value || 
+    !parseInt(numStepsInput.value) || 
+    !parseInt(minutesActiveInput.value) ||
+    !parseInt(stairsInput.value))
+     {
     alert("Ensure that information is entered correctly");
   } else {
     renderPostedData(obj);
     console.log(obj);
-    //postActivityData(obj);
+    postActivityData(obj);
   }
   
    

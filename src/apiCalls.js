@@ -64,20 +64,48 @@ export const fetchActivityData = () => {
     });
 };
 
-export const postActivityData = (activityObj) => {
-  const activityPostURL = "http://localhost:3001/api/v1/activity";
-  const options = {
+// export const postActivityData = (activityObj) => {
+//   const activityPostURL = "http://localhost:3001/api/v1/activity";
+//   const options = {
+//     method: "POST",
+//     body: JSON.stringify(activityObj),
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//   };
+
+//   fetch(activityPostURL, options)
+//     .then((response) => {
+//       if (!response.ok && response.status !== 422) {
+
+//         throw new Error(`HTTP error! Status: ${response.status}`);
+//       }
+//       return response.json();
+//     })
+//     .then((data) => {
+//       console.log("New activity data:", data);
+//     })
+//     .catch((error) => {
+//       console.error("Error:", error);
+//     });
+// };
+
+// date: dateInput.value, 
+//     numSteps: parseInt(numStepsInput.value),
+//      minutesActive: parseInt(minutesActiveInput.value), 
+//      flightsOfStairs: parseInt(stairsInput.value)
+
+
+ export const postActivityData = (activityObj) => {
+  fetch("http://localhost:3001/api/v1/activity", {
     method: "POST",
     body: JSON.stringify(activityObj),
     headers: {
       "Content-Type": "application/json",
-    },
-  };
-
-  fetch(activityPostURL, options)
+    }
+  })
     .then((response) => {
       if (!response.ok && response.status !== 422) {
-
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       return response.json();
@@ -89,6 +117,3 @@ export const postActivityData = (activityObj) => {
       console.error("Error:", error);
     });
 };
-
-
-

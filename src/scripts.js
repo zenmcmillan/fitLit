@@ -7,14 +7,50 @@ import { averageHoursSleptPerDay, averageSleepQuality, give7DaySleepHours, give7
 import { milesWalked, didMeetStepGoal } from './activity-functions';
 
 const addActivityButton = document.querySelector(".add-activity");
-const form = document.querySelector('form')
+//const form = document.querySelector('.form')
 const checkBox1 = document.querySelector(".checkbox-1");
 const checkBox2 = document.querySelector(".checkbox-2");
 const checkBox3 = document.querySelector(".checkbox-3");
 const checkBox4 = document.querySelector(".checkbox-4");
 const checkBox5 = document.querySelector(".checkbox-5");
+const submitButton = document.querySelector('.submit-button')
+const userIdInput = document.querySelector('.user-id-input')
+const dateInput = document.querySelector('.date-input')
+const numStepsInput = document.querySelector('.num-steps-input')
+const minutesActiveInput = document.querySelector('.minutes-active-input')
+const stairsInput = document.querySelector('.stairs-input')
 
 let index; 
+
+
+submitButton.addEventListener("click", () => {
+  
+
+  let obj = {
+    userID: parseInt(userIdInput.value), 
+    date: dateInput.value, 
+    numSteps: parseInt(numStepsInput.value),
+     minutesActive: parseInt(minutesActiveInput.value), 
+     flightsOfStairs: parseInt(stairsInput.value)
+    }
+
+  if (!parseInt(userIdInput.value) || 
+  !dateInput.value || 
+  !parseInt(numStepsInput.value) || 
+  !parseInt(minutesActiveInput.value) ||
+  !parseInt(stairsInput.value)) {
+    alert("Ensure that information is entered correctly");
+  } else {
+    renderPostedData(obj);
+    console.log(obj);
+    //postActivityData(obj);
+  }
+  
+   
+});
+
+
+
 
 checkBox5.addEventListener("click", () => {
   showMotivationLevelResponse();
@@ -32,32 +68,8 @@ checkBox2.addEventListener("click", () => {
   showMotivationLevelResponse();
 });
 
-checkBox1.addEventListener('click', () => {
-  showMotivationLevelResponse()
-})
-
-
-
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  const formData = new FormData(event.target);
-
-  const data = {};
-
-  data.userID = parseInt(formData.get("userID"));
-  data.date = formData.get("date"); 
-  data.numSteps = parseInt(formData.get("numSteps")); 
-  data.minutesActive = parseInt(formData.get("minutesActive")); 
-  data.flightsOfStairs = parseInt(formData.get("flightsOfStairs")); 
-
-  if(!data.userID || !data.date || !data.numSteps || !data.minutesActive || !data.flightsOfStairs){
-    alert("You must fill all infomation fields correctly before submitting!")
-    formData.reset()
-  }
-  
-  postActivityData(data);
-  renderPostedData(data)
+checkBox1.addEventListener("click", () => {
+  showMotivationLevelResponse();
 });
 
 addActivityButton.addEventListener('click', () => {
@@ -146,7 +158,6 @@ const grapLatestSleep = (data) => {
   let sleepQualityToday = sleepQualityDay(data, index, '2023/07/01')
   showLatestSleep(sleepToday, sleepQualityToday)
 }
-
 
 
 

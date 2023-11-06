@@ -113,7 +113,7 @@ As we moved on to the final iteration for the project we were given a unique pat
 
 ## Preview of App:
 
-![Project Sample](Project-Sample.gif)
+
 
 ## Context:
 For part 2 we took the established project and implemented the feedback we got from our instructor. From there we were able to perfect the formula we had established and add new functionality to the website. We were given a week to work on this and developed the learning as the days went on, but were able to meet our goal with time to spare. Cumulatively, we worked for about 30 hours total on this part which was a very comfortable pace. 

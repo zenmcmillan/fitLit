@@ -26,7 +26,7 @@ let index;
 submitButton.addEventListener("click", () => {
   
   let obj = {
-    userID: parseInt(userIdInput.value), 
+    userID: parseInt(index), 
     date: dateInput.value, 
     numSteps: parseInt(numStepsInput.value),
      minutesActive: parseInt(minutesActiveInput.value), 
@@ -36,13 +36,10 @@ submitButton.addEventListener("click", () => {
   let chosenDate = new Date(dateInput.value)
   let currentDate = new Date()
 
-  if (profileId !== parseInt(userIdInput.value)) {
-    alert("Enter the correct User ID")
-  } else if (chosenDate > currentDate) {
+   if (chosenDate > currentDate) {
     alert("Selected date is in the future")
   }
   else if (
-    !parseInt(userIdInput.value) || 
     !dateInput.value || 
     !parseInt(numStepsInput.value) || 
     !parseInt(minutesActiveInput.value) ||

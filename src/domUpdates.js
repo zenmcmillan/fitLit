@@ -107,7 +107,7 @@ const showUserInfo = (userId, array, averages) => {
   
   profileSection.innerHTML += `
 
-     <p>Id Number: ${user.id}</p>
+     <p>ID#: ${user.id}</p>
      <p>Name: ${user.name}</p>
      <p>Email: ${user.email}</p>
      <p>Stride Length - ${user.strideLength}</p>

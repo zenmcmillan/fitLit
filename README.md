@@ -98,7 +98,7 @@ As we moved on to the final iteration for the project we were given a unique pat
 5. Use the git clone command followed by pasting the copied SSH key.
 6. Change into the cloned directory with the cd command.
 7. Install dependencies by typing npm install into the terminal
-8. Start the webpack by typong npm start into the terminal
+8. Start the webpack by typing npm start into the terminal
 9. Copy the link it provides that will look like this: http://localhost:8080/
 10. Paste that into your web browser of choice
 11. Go to this link: ("https://github.com/turingschool-examples/fitlit-api")

@@ -7,7 +7,6 @@ import { averageHoursSleptPerDay, averageSleepQuality, give7DaySleepHours, give7
 import { milesWalked, didMeetStepGoal } from './activity-functions';
 
 const addActivityButton = document.querySelector(".add-activity");
-//const form = document.querySelector('.form')
 const checkBox1 = document.querySelector(".checkbox-1");
 const checkBox2 = document.querySelector(".checkbox-2");
 const checkBox3 = document.querySelector(".checkbox-3");
@@ -34,9 +33,15 @@ submitButton.addEventListener("click", () => {
      flightsOfStairs: parseInt(stairsInput.value)
     }
 
+  let chosenDate = new Date(dateInput.value)
+  let currentDate = new Date()
+
   if (profileId !== parseInt(userIdInput.value)) {
     alert("Enter the correct User ID")
-  } else if (
+  } else if (chosenDate > currentDate) {
+    alert("Selected date is in the future")
+  }
+  else if (
     !parseInt(userIdInput.value) || 
     !dateInput.value || 
     !parseInt(numStepsInput.value) || 

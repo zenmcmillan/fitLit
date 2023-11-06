@@ -118,7 +118,6 @@ const showUserInfo = (userId, array, averages) => {
   const usersFriends = array[userId - 1].friends;
 
    usersFriends.forEach((friend) => {
-
     friendsSection.innerHTML += `
     <p>${array[friend - 1].name}</p>
     `;

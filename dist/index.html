@@ -48,24 +48,21 @@
           <span class="material-symbols-outlined">footprint</span>
           <p class="activity-content">
       <div class="form-container hidden">    
-      <section class="form hidden">
-          <label class="input-label" for="user id">userID</label>
-          <input class="input-box user-id-input user-id" name="userID" type="text" placeholder="user Id goes here...">
-        
-          <label class="input-label" for="date">Date</label>
-          <input class="input-box date-input" name="date" type="date" placeholder="YYYY/DD/MM">
-        
-          <label class="input-label" for="number-of-steps">Number of Steps</label>
-          <input class="input-box num-steps-input" name="numSteps" type="text" placeholder="number of steps goes here..">
-        
-          <label class="input-label" for="minutes-active">Minutes Active</label>
-          <input class="input-box minutes-active-input" name="minutesActive" type="text" placeholder="minutes active goes here..">
-        
-          <label class="input-label" for="flights-of-stairs">Flights of Stairs</label>
-          <input class="input-box stairs-input" name="flightsOfStairs" type="text" placeholder="flights of stairs goes here..">
-          <button class="submit-button" >Submit</button>
-      </section>
-    </div> 
+        <section class="form hidden">
+  <label class="input-label" for="user-id">User ID</label>
+  <input class="input-box user-id-input user-id" name="userID" type="text" id="user-id" aria-label="User ID" placeholder="E.g., john_doe123">
+  <label class="input-label" for="date">Date</label>
+  <input class="input-box date-input" name="date" type="date" id="date" aria-label="Date" placeholder="YYYY-MM-DD">
+  <label class="input-label" for="number-of-steps">Number of Steps</label>
+  <input class="input-box num-steps-input" name="numSteps" type="text" id="number-of-steps" aria-label="Number of Steps" placeholder="Enter the number of steps">
+  <label class="input-label" for="minutes-active">Minutes Active</label>
+  <input class="input-box minutes-active-input" name="minutesActive" type="text" id="minutes-active" aria-label="Minutes Active" placeholder="Enter minutes of activity">
+  <label class="input-label" for="flights-of-stairs">Flights of Stairs</label>
+  <input class="input-box stairs-input" name="flightsOfStairs" type="text" id="flights-of-stairs" aria-label="Flights of Stairs" placeholder="Enter the number of flights of stairs">
+  <button class="submit-button" aria-label="Submit">Submit</button>
+</section>
+
+      </div> 
           </p>
           <div class="add-activity-button-container">
             <button class="add-activity" >Add Activity</button>
@@ -82,22 +79,23 @@
             <p class="motivation-second-title">Level of Motivation Today</p>
             <p class="motivation-level"></p>
             <div class="checkbox-container">
-            <label class="checkbox-label" for="1">
-              <input class="checkbox checkbox-1" type="checkbox" value="1">
-            </label>1 
-            <label class="checkbox-label" for="2">
-              <input class="checkbox checkbox-2" type="checkbox" value="2">
-            </label>2
-            <label class="checkbox-label" for="3">
-              <input class="checkbox checkbox-3" type="checkbox" value="3">
-            </label>3
-            <label class="checkbox-label" for="4" value="4">
-              <input class="checkbox checkbox-4" type="checkbox">
-            </label>4
-            <label class="checkbox-label" for="5" value="5">
-              <input class="checkbox checkbox-5" type="checkbox">
-            </label>5
-            </div>
+  <label class="checkbox-label" for="checkbox-1">
+    <input class="checkbox checkbox-1" type="checkbox" id="checkbox-1" value="1" aria-label="Level 1 Motivation">
+  </label>Option 1
+  <label class="checkbox-label" for="checkbox-2">
+    <input class="checkbox checkbox-2" type="checkbox" id="checkbox-2" value="2" aria-label="Level 2 Motivation">
+  </label>Option 2
+  <label class="checkbox-label" for="checkbox-3">
+    <input class="checkbox checkbox-3" type="checkbox" id="checkbox-3" value="3" aria-label="Level 3 Motivation">
+  </label>Option 3
+  <label class="checkbox-label" for="checkbox-4">
+    <input class="checkbox checkbox-4" type="checkbox" id="checkbox-4" value="4" aria-label="Level 4 Motivation">
+  </label>Option 4
+  <label class="checkbox-label" for="checkbox-5">
+    <input class="checkbox checkbox-5" type="checkbox" id="checkbox-5" value="5" aria-label="Level 5 Motivation">
+  </label>Option 5
+</div>
+
           </section>
        </section>
     </section>

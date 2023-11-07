@@ -35,7 +35,7 @@
   margin-top: -50px;
   font-size: 30px;
   text-align: center;
-  line-height: .5;
+  line-height: .6;
 }
 .profile-name, .sleep-name, .activity-name, .step-count-name, .hydration-name, .motivation-name {
   font-weight: 700;
@@ -75,7 +75,16 @@
   flex-direction: column;
   height: 400px;
 }
-
+.motivation-section-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20%;
+  border-radius: 25px;
+  background-color: lightblue;
+  text-align: center;
+  padding: 20px;
+}
 /* .activity-left-container {
   display: flex;
   flex-direction: column;
@@ -139,13 +148,32 @@
 
 
 .activity-right-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
   border-radius: 25px;
-  width: 550px;
-  background-color: lightblue;  
+  background-color: lightblue;
+  text-align: center;
+  padding: 20px;
+}
+
+.activity-right-container .step-count-name {
+  font-weight: 700;
+  font-size: 15px;
+  margin:0;
+}
+
+.activity-right-container .material-symbols-outlined {
+  font-size: 30px;
+  margin:0;
+}
+
+.activity-right-container .user-average-steps,
+.activity-right-container .all-users-average-steps {
   font-size: 20px;
+  margin:0;
+  line-height: 1;
 }
 
 .activity-content {
